@@ -8,14 +8,6 @@
     height: 100%;
   }
   
-  body {
-    background-image: url(https://images.pexels.com/photos/154246/pexels-photo-154246.jpeg?auto=compress&cs=tinysrgb&w=800);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  
   nav {
     border: 1px solid red;
     background-color: whitesmoke;
@@ -31,29 +23,89 @@
     display: inline-block;
     margin: 10px;
   }
-  
+
   a {
       display: block;
-      padding: 10px;
+      padding: 5px 20px;
       text-decoration: none;
+  }
+
+  .first {
+    color: black;
+  }
+
+  .second {
+    color: white;
   }
   
   #button {
     background-color: rgb(25, 125, 247);
     position: absolute;
     right: 0;
+    border-radius: 5px;
   }
   
   main {
-      border: 1px solid red;
+    background-image: url(https://images.pexels.com/photos/154246/pexels-photo-154246.jpeg?auto=compress&cs=tinysrgb&w=800);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid red;
+    padding: 100px 0;
+    width: 100%;
+  }
+
+  #container {
       position: relative;
       width: 70%;
       margin: 100px auto;
   }
   
+  div {
+    padding: 20px;
+    border: 1px solid red;
+  }
   h1 {
       color: white;
       text-align: center;
       border: 1px solid red;
+      margin-bottom: 15px;
+  }
+
+  .block {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  button {
+    background-color: rgb(25, 125, 247);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+  input {
+    line-height: 25px;
+    width: 50%;
+    border-radius: 5px;
+    padding: 5px 20px;
+  }
+
+  footer {
+    border: 1px solid red;
+    background-color: whitesmoke;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 15px;
+  }
+
+  img {
+    width: 75px;
+    height: 75px;
   }
   
