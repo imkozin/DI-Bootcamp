@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    background-image: url(https://images.pexels.com/photos/154246/pexels-photo-154246.jpeg?auto=compress&cs=tinysrgb&w=800);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  nav {
+    border: 1px solid red;
+    background-color: whitesmoke;
+  }
+  
+  ul {
+      position: relative;
+      width: 70vw;
+      margin: 0 auto;
+  }
+  
+  li {
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+  }
+  
+  #button {
+    background-color: rgb(25, 125, 247);
+    position: absolute;
+    right: 0;
+  }
+  
+  main {
+      border: 1px solid red;
+      position: relative;
+      width: 70%;
+      margin: 100px auto;
+  }
+  
+  h1 {
+      color: white;
+      text-align: center;
+      border: 1px solid red;
+  }
+  
