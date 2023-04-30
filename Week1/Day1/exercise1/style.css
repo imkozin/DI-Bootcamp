@@ -1,0 +1,44 @@
+span {
+    background-color: yellow;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+#centered {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+h5 {
+    color: red;
+    border: 1px solid red;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+th, td {
+    border: 1px solid black;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tbody {
+    line-height: 50px;
+}
+
+[alt="tiger"] {
+    margin-top: 100px;
+    border: 15px solid orangered;
+}
