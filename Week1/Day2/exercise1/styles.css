@@ -51,7 +51,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    border: 1px solid red;
     margin: 15px;
   }
   
@@ -103,12 +102,22 @@
   #pic4 {
     background-image: url(image4.png);
   }
-  
-  /* .description {
+
+  .pic_wrapper {
+    position: relative;
+  }
+
+  .description {
     position: absolute;
-    bottom: 0; 
-  } */
-  
+    top: 450px;
+    width: 50%;
+    right: 80px;
+  }
+
+  .item {
+    margin: 10px;
+  }
+
   .sale {
       color: green;
       font-weight: bold;
@@ -125,11 +134,24 @@
     border: 1px solid lightgray;
     background-color: whitesmoke;
     color: gray;
+    margin: 15px;
     font-weight: bold;
     text-align: center;
     padding: 10px;
   }
-  
+
+  .button:hover {
+    background-color: green;
+    color: white;
+  }
+
+  /* .icons > i {
+    color: darkblue;
+    background-color: white;
+    padding: 2px;
+    visibility: hidden;
+  } */
+
   footer {
     background-color: black;
     position: fixed;
