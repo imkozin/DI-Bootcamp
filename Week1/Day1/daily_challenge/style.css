@@ -24,6 +24,7 @@ img {
   height: 35px;
   width: 50px;
 }
+
 nav {
   position: relative;
   background-color: rgb(20, 20, 20);
@@ -37,7 +38,7 @@ li {
 }
 
 #imgDiv{
-  width:50vw;
+  width: 50vw;
 }
 
 a {
@@ -76,4 +77,57 @@ h1 {
 #navDiv{
   position:absolute;
   right: 15px;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  nav {
+    background-color: red;
+  }
+
+  a {
+    color: white;
+  }
+
+  main {
+    position: relative;
+  }
+  
+  h1 {
+  position: absolute;
+  right: 10px;
+}
+
+#info {
+  position: absolute;
+  left: 10px;
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  h1 {
+    font-size: 25px;
+  }
+  
+  nav {
+    background-color: lightgreen;
+  }
+
+  a {
+    color: black;
+  }
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  h1 {
+    font-size: 35px;
+  }
+
+  nav {
+    background-color: yellow;
+  }
+
+  a {
+    color: black;
+  }
 }
