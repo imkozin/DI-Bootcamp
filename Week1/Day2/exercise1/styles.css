@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  header {
+    background-color: black;
+    height: 50px;
+  }
+  
+  nav {
+    position: relative;
+    width: 90vw;
+    margin: 0 auto;
+  }
+  
+  div {
+    display: inline-block;
+  }
+  
+  .link {
+    position: absolute;
+    right: 0;
+  }
+  
+  i {
+    color: white;
+    font-size: 30px;
+    margin-top: 10px;
+  }
+  
+  a {
+    display: block;
+    padding: 15px 10px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .container {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .image {
+    display: inline-block;
+    position: relative;
+    height: 400px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid red;
+    margin: 15px;
+  }
+  
+  .green_circle {
+    text-transform: uppercase;
+    background-color: rgb(26, 164, 151);
+    float: left;
+    margin-left: 10px;
+  }
+  
+  .red_circle {
+    background-color: red;
+    float: right;
+    margin-right: 10px;
+  }
+  
+  .green_circle,
+  .red_circle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 5px;
+  }
+  
+  .new,
+  .percent {
+    text-transform: uppercase;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 5px;
+  }
+  
+  #pic1 {
+    background-image: url(image1.png);
+  }
+  
+  #pic2 {
+    background-image: url(image2.png);
+  }
+  
+  #pic3 {
+    background-image: url(image3.png);
+  }
+  
+  #pic4 {
+    background-image: url(image4.png);
+  }
+  
+  /* .description {
+    position: absolute;
+    bottom: 0; 
+  } */
+  
+  .sale {
+      color: green;
+      font-weight: bold;
+      font-size: 20px;
+  }
+  
+  .price {
+      text-decoration: line-through;
+      color: gray;
+  }
+  
+  .button {
+    text-transform: uppercase;
+    border: 1px solid lightgray;
+    background-color: whitesmoke;
+    color: gray;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  footer {
+    background-color: black;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+  }
+  

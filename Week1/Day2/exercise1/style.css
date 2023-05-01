@@ -38,20 +38,21 @@ a {
   text-transform: uppercase;
 }
 
-main {
-    width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.pic_wrapper {
+  width: 100%;
+  text-align: center;
 }
 
 .image {
+  display: inline-block;
+  position: relative;
   height: 400px;
   width: 300px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   border: 1px solid red;
+  margin: 15px;
 }
 
 .green_circle {
@@ -87,21 +88,6 @@ main {
   margin-left: 5px;
 }
 
-.button {
-    text-transform: uppercase;
-    border: 1px solid lightgray;
-    background-color: whitesmoke;
-    color: gray;
-    text-align: center;
-    padding: 10px;
-}
-
-.description {
-  border: 1px soled red;
-  color: white;
-  text-align: center;
-}
-
 #pic1 {
   background-image: url(image1.png);
 }
@@ -116,6 +102,32 @@ main {
 
 #pic4 {
   background-image: url(image4.png);
+}
+
+/* .description {
+  position: absolute;
+  bottom: 0; 
+} */
+
+.sale {
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.price {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.button {
+  text-transform: uppercase;
+  border: 1px solid lightgray;
+  background-color: whitesmoke;
+  color: gray;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
 }
 
 footer {
