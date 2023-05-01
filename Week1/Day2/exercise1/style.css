@@ -1,49 +1,129 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 header {
-    background-color: black;
-    height: 50px;
+  background-color: black;
+  height: 50px;
 }
 
 nav {
-    position: relative;
-    width: 90vw;
-    margin: 0 auto;
+  position: relative;
+  width: 90vw;
+  margin: 0 auto;
 }
 
 div {
-    display: inline-block;
+  display: inline-block;
 }
 
 .link {
-    position: absolute;
-    right: 0;
+  position: absolute;
+  right: 0;
 }
 
 i {
-    color: white;
-    font-size: 30px;
-    margin-top: 10px;
+  color: white;
+  font-size: 30px;
+  margin-top: 10px;
 }
 
 a {
-    display: block;
-    padding: 15px 10px;
-    color: white;
-    text-decoration: none;
+  display: block;
+  padding: 15px 10px;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+main {
+    width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image {
+  height: 400px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid red;
+}
+
+.green_circle {
+  text-transform: uppercase;
+  background-color: rgb(26, 164, 151);
+  float: left;
+  margin-left: 10px;
+}
+
+.red_circle {
+  background-color: red;
+  float: right;
+  margin-right: 10px;
+}
+
+.green_circle,
+.red_circle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.new,
+.percent {
+  text-transform: uppercase;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.button {
     text-transform: uppercase;
+    border: 1px solid lightgray;
+    background-color: whitesmoke;
+    color: gray;
+    text-align: center;
+    padding: 10px;
+}
+
+.description {
+  border: 1px soled red;
+  color: white;
+  text-align: center;
+}
+
+#pic1 {
+  background-image: url(image1.png);
+}
+
+#pic2 {
+  background-image: url(image2.png);
+}
+
+#pic3 {
+  background-image: url(image3.png);
+}
+
+#pic4 {
+  background-image: url(image4.png);
 }
 
 footer {
-    background-color: black;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
+  background-color: black;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
 }
