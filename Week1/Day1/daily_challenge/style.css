@@ -25,18 +25,19 @@ img {
   width: 50px;
 }
 nav {
+  position: relative;
   background-color: rgb(20, 20, 20);
   height: 75px;
-}
-
-ul {
-  float: right;
-  margin: 0 auto;
+  overflow: hidden;
 }
 
 li {
   display: inline-block;
-  margin-right: 50px;
+  /* margin-right: 50px; */
+}
+
+#imgDiv{
+  width:50vw;
 }
 
 a {
@@ -64,10 +65,15 @@ h1 {
   margin-left: 50px;
 }
 
-div {
+#info {
   font-family: Arial, Helvetica, sans-serif;
   text-align: left;
   width: 25%;
   margin-top: 10px;
   margin-left: 50px;
+}
+
+#navDiv{
+  position:absolute;
+  right: 15px;
 }
