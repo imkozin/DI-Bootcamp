@@ -1,0 +1,61 @@
+.greenbox {
+    background-color: #A4E6A4;
+}
+
+.purplebox {
+    background-color: #CEAAF0;
+}
+
+.pinkbox{
+    background-color: #F288D5;
+}
+
+.bluebox{
+    background-color: #438EEA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    border: 0.5rem solid blue;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    gap : 1rem 1.3rem;
+    height: 100vh;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav > * {
+    border: 1px solid black;
+    font-size: 2rem;
+}
+
+.wrapper {
+    grid-column: 1 / span 2;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.main > * {
+    border: 1px solid blue;
+}
+
+article {
+    display: grid;
+    justify-content: center;
+    align-content: center
+}
