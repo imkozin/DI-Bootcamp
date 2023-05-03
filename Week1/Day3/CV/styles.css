@@ -42,17 +42,19 @@ h1 {
 .picture {
     position: absolute;
     top: 0;
-    height: fit-content;
+    /* height: fit-content; */
     margin-top: 9rem;
     border: 1px solid red;
+    /* align-items: center; */
 }
 
 img {
     position: relative;
-    width: 11rem;
-    height: 11rem;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 1px solid black;
+    /* align-self: center; */
 }
 
 .name {
@@ -85,12 +87,13 @@ img {
     border: 2px solid grey;
     border-left: none;
     border-right: none;
-    padding: 3em;
+    width: 70%;
+    height: 10em;
     margin-top: 38em;
     display: flex;
     flex-direction: column;
-    align-content: center;
     justify-content: space-around;
+    align-content: center;
 }
 
 p {
@@ -100,6 +103,10 @@ p {
     font-weight: bold;
     color: grey;
     justify-content: space-around; /* ??? */
+}
+
+div > p:last-child {
+    line-height: 1.5em;
 }
 
 .text {
