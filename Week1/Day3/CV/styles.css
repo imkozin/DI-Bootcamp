@@ -9,8 +9,8 @@
 main {
     display: flex;
     flex-direction: row;
-    height: 100%;
-    width: 100vw;
+    /* height: 70%; */
+    width: 90vw;
 }
 
 #about {
@@ -19,61 +19,64 @@ main {
     justify-content: center;
     align-items: center;
     background-color: rgb(225, 225, 225);
-    width: 30vw;
-    height: 100%;
+    width: 30%;
+    border: 1px solid red;
 }
 
-#main {
-    display: grid;
-    grid-template-rows: 1fr 2fr 1fr 2fr;
-    gap : 1rem 1.3rem;
+#general {
+    /* display: grid;
+    grid-template-rows: 1fr 2fr 1fr 2fr; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     width: 70vw;
-    height: 100vh;
+    border: 1px solid red;
+    padding-left: 2em;
+    line-height: 1.5em;
 }
 
 h1 {
     font-family: 'Roboto';
-    font-size: 1.2rem;
-    color: black;
+    font-size: 1.5rem;
+    color: rgb(77, 77, 77);
     text-transform: uppercase;
     text-align: left;
+}
+
+h3 {
+    font-family: 'Roboto';
+    color: rgb(77, 77, 77);
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .picture {
     position: absolute;
     top: 0;
-    /* height: fit-content; */
-    margin-top: 9rem;
+    border: 1px solid black;
+    margin-top: 8rem;
     border: 1px solid red;
-    /* align-items: center; */
 }
 
 img {
-    position: relative;
-    width: 150px;
-    height: 150px;
+    width: 12.5em;
+    height: 12.5em;
     border-radius: 50%;
     border: 1px solid black;
-    /* align-self: center; */
 }
 
 .name {
-    position: absolute;
-    margin-top: 1em;
     font-family: 'Roboto';
-    font-size: 3em;
-    color: black;
+    font-size: 3.5em;
+    color: rgb(77, 77, 77);
     text-transform: uppercase;
     text-align: center;
     font-weight: bold;
     letter-spacing: 3px;
-    /* padding-top: 5em; */
     border: 1px solid red;
 }
 
 .profession {
-    position: absolute;
-    margin-top: 15em;
     text-align: center;
     border: 1px solid red;
     font-size: 1.2rem;
@@ -83,17 +86,45 @@ img {
     letter-spacing: 1px;
 }
 
+.myself {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+    border: 1px solid red;
+}
+
 .contact {
     border: 2px solid grey;
     border-left: none;
     border-right: none;
     width: 70%;
     height: 10em;
-    margin-top: 38em;
+    margin-top: 45em;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-content: center;
+}
+
+.link {
+    font-family: 'Roboto';
+    text-decoration: none;
+    color: grey;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.social {
+    margin: 2em;
+}
+
+a > i {
+    font-size: 2em;
+    color: rgb(77, 77, 77);
 }
 
 p {
@@ -109,8 +140,28 @@ div > p:last-child {
     line-height: 1.5em;
 }
 
-.text {
+.block, .uni {
     text-align: justify;
-    border-top: 1px solid grey;
+    /* border-top: 1px solid grey; */
     width: 80%;
+}
+
+hr {
+    margin: 1em 0;
+    width: 80%;
+    color: rgb(77, 77, 77);
+}
+
+.uni {
+    color: rgb(77, 77, 77);
+    padding: 1em 0;
+}
+
+.skills-list {
+    display: flex;
+    /* justify-content: center; */
+}
+
+.column {
+    width: 50%;
 }
