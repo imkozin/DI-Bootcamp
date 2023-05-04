@@ -20,7 +20,7 @@ main {
     align-items: center;
     background-color: rgb(225, 225, 225);
     width: 30%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #general {
@@ -30,8 +30,8 @@ main {
     flex-direction: column;
     justify-content: space-around;
     width: 70vw;
-    border: 1px solid red;
-    padding-left: 2em;
+    /* border: 1px solid red; */
+    padding: 2em;
     line-height: 1.5em;
 }
 
@@ -41,6 +41,7 @@ h1 {
     color: rgb(77, 77, 77);
     text-transform: uppercase;
     text-align: left;
+    padding-top: 1em;
 }
 
 h3 {
@@ -51,11 +52,13 @@ h3 {
 }
 
 .picture {
-    position: absolute;
-    top: 0;
-    border: 1px solid black;
-    margin-top: 8rem;
-    border: 1px solid red;
+    /* position: absolute;
+    top: 0; */
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+    margin-top: 5rem;
+    /* border: 1px solid red; */
 }
 
 img {
@@ -73,12 +76,10 @@ img {
     text-align: center;
     font-weight: bold;
     letter-spacing: 3px;
-    border: 1px solid red;
 }
 
 .profession {
     text-align: center;
-    border: 1px solid red;
     font-size: 1.2rem;
     color: grey;
     text-transform: uppercase;
@@ -87,25 +88,24 @@ img {
 }
 
 .myself {
-    position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 250px;
-    border: 1px solid red;
+    justify-content: space-around;
+    align-content: center;
+    height: 100%;
+    /* border: 1px solid red; */
 }
 
 .contact {
     border: 2px solid grey;
     border-left: none;
     border-right: none;
-    width: 70%;
     height: 10em;
-    margin-top: 45em;
+    /* margin-top: 45em; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-content: center;
+    text-align: center;
 }
 
 .link {
@@ -113,13 +113,14 @@ img {
     text-decoration: none;
     color: grey;
     font-size: 1em;
+    padding: 0.5em;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
 .social {
-    margin: 2em;
+    margin: 1em;
 }
 
 a > i {
@@ -140,7 +141,7 @@ div > p:last-child {
     line-height: 1.5em;
 }
 
-.block, .uni {
+.block, .uni, .skills-list {
     text-align: justify;
     /* border-top: 1px solid grey; */
     width: 80%;
@@ -159,6 +160,8 @@ hr {
 
 .skills-list {
     display: flex;
+    margin-left: 3em;
+    line-height: 1.5;
     /* justify-content: center; */
 }
 
