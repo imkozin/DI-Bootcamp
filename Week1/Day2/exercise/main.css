@@ -8,29 +8,92 @@
 
 h1 {
     font-family: 'Poppins';
-
 }
 
 main {
     width: 100%;
     margin: 0 auto;
     border: 1px solid black;
-  text-align: center;
+    text-align: center;
+
 }
 
 .card {
     display: inline-block;
-    width: 300px;
-    height: 400px;
+    width: 350px;
+    height: 450px;
     vertical-align: middle;
+    text-align: center;
 }
 
 .form {
     border: 1px solid purple;
+    background-color: whitesmoke;
 }
 
+.log {
+    background-color: purple;
+    color: white;
+    text-transform: uppercase;
+    width: 290px;
+    height: 30px;
+    margin: 25px;
+}
+
+[required] {
+    width: 290px;
+    height: 30px;
+    margin: 10px;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+
+
+.icon {
+    color:grey;
+    margin: 10px;
+    font-size: 25px;
+}
+
+.connect {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user {
+    color: white;
+    font-size: 55px;
+}
+
+a {
+    padding-left: 55px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.block {
+    margin-top: 10%;
+}
+hr {
+    width: 290px;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.footer {
+    margin-top: 20%;
+}
 .register {
     background-image: linear-gradient(to bottom right, #2d1b30, purple);
+    padding: 25px;
+}
+
+.container {
+    margin-top: 30%;
+}
+
+#register {
+    color: white;
 }
 
 #hello {
@@ -38,9 +101,17 @@ main {
     color: white;
 }
 
-button {
-    background-color: purple;
+
+
+.btn {
     color: white;
+    background: none;
+    border-radius: 25px;
+    border: 1px solid white;
     text-transform: uppercase;
-    width: 200px;
+    padding: 10px;
+    width: 100px;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-left: 33%;
 }

@@ -14,22 +14,51 @@
   <body>
     <main>
       <div class="card form">
-        <h1>Log In</h1>
-        <input type="email" placeholder="email" name="email" required> <br>
-        <input type="password" placeholder="password" minlength="6" name="psw" required><br>
-        <label for="remember">
-            <input type="checkbox" name="remember">Remember me
-        </label>
-        <a href="#">Forget password?</a>
-        <br>
-        <button type="submit">Log In</button>
-        <p>&copy 2023</p>
+        <div class="block">
+          <h1>Log In</h1>
+          <input type="email" placeholder="email" name="email" required />
+          <br />
+          <input
+            type="password"
+            placeholder="password"
+            minlength="6"
+            name="psw"
+            required
+          /><br />
+          <label for="remember">
+            <input type="checkbox" name="remember" />Remember me
+          </label>
+          <a href="#">Forget password?</a>
+          <br />
+          <button type="submit" class="log">Log In</button>
+          <p class="connect">Or Connect with</p>
+          <hr>
+          
+          <div>
+          <i class="fa-brands fa-facebook icon"></i>
+          <i class="fa-brands fa-twitter icon"></i>
+          <i class="fa-brands fa-github icon"></i>
+          <i class="fa-brands fa-linkedin-in icon"></i>
+        </div>
+          <p class="footer">&copy 2023</p>
+        </div>
       </div>
       <div class="card register">
-        <i class="fa-regular fa-user"></i>
-        <h1 id="hello">Hello, friend!</h1>
-        <p class="">Enter your personal details and start journey with us</p>
+        <div class="container">
+          <i class="fa-regular fa-user user"></i>
+          <h1 id="hello">Hello, friend!</h1>
+          <p id="register">
+            Enter your personal details and start journey with us
+          </p>
+          <p class="btn">
+            Register <i class="fa-light fa-circle-arrow-right arrow"></i>
+          </p>
+        </div>
       </div>
+      <script
+        src="https://kit.fontawesome.com/6d1eb1fd5c.js"
+        crossorigin="anonymous"
+      ></script>
     </main>
   </body>
 </html>
