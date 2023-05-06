@@ -21,10 +21,13 @@
     <a href="#about">About</a>
   </li>
   <li class="list-item">
-    <a href="#">Projects</a>
+    <a href="#skills">Skills</a>
   </li>
   <li class="list-item">
-    <a href="#">Contact</a>
+    <a href="#projects">Portfolio</a>
+  </li>
+  <li class="list-item">
+    <a href="#contacts">Contact</a>
   </li>
 </ul>
       </nav>
@@ -32,8 +35,8 @@
 
     <main>
       <section id="intro">
-        <h1 class="intro">Hello everyone, welcome to my website!</h1> <br>
-        <h2 class="intro">My name is Ivan Kozin and I'm Fullstack Developer</h2>
+        <h1>Hello everyone, welcome to my website!</h1> <br>
+        <h2>My name is Ivan Kozin and I'm Fullstack Developer</h2>
       </section>
       
       <section id="about">
@@ -48,10 +51,49 @@
     </div>
   </section>
 
-  <section id="portfolio">
-    <h1>Projects</h1>
-    
+  <section id="projects">
+    <h1>Portfolio</h1>
+    <div class="block">
+    <div class="card">Future Project #1</div>
+    <div class="card">Future Project #2</div>
+    <div class="card">Future Project #3</div>
+    <div class="card">Future Project #4</div>
   </section>
+
+  <section id="skills">
+    <h1>Skills</h1>
+    <div class="block">
+    <div class="card">JavaScript</div>
+    <div class="card">ReactJS</div>
+    <div class="card">Python</div>
+    <div class="card">NodeJS</div>
+  </section>
+
+  <section id="contacts">
+    <h1>Contacts</h1>
+    <div class="form">
+      <div class="social">
+        <h2>Get in Touch</h2>
+        <i class="fa-brands fa-facebook icon"></i>
+        <i class="fa-brands fa-instagram icon"></i>
+        <i class="fa-brands fa-github icon"></i>
+        <i class="fa-brands fa-linkedin-in icon"></i>
+      </div>
+      <form action="">
+        <input type="text" placeholder="Your name" name="name"
+        required> <br>
+        <input type="email" placeholder="Your email" name="email" required>
+        <br>
+        <input id="message" type="text" required><br>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </div>
+  </section>
+  <footer>&copy Made by Ivan Kozin</footer>
+  <script
+  src="https://kit.fontawesome.com/6d1eb1fd5c.js"
+  crossorigin="anonymous"
+></script>
     </main>
   </body>
 </html>

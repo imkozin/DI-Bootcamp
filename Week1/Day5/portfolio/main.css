@@ -36,7 +36,6 @@ html, body {
     width: 200px;
     text-align: center;
     padding: 15px;
-
     /* transition-property: width, background-color;
     transition-duration: 1s, 500ms; */
 }
@@ -85,10 +84,11 @@ section {
 }
 
 #intro {
-    margin-right: auto;
-    margin-left: auto;
+    /* margin-right: auto;
+    margin-left: auto; */
     text-align: center;
     font-family: 'Montserrat';
+    padding-top: 20%;
     font-size: 2em;
     color: aliceblue;
 }
@@ -99,14 +99,18 @@ section > h1 {
     color: aliceblue;
 }
 
-#about {
-    padding: 5em;
+#about, #projects, #skills, #contacts {
+    /* margin-right: auto;
+    margin-left: auto;
+    text-align: center; */
+    padding-top: 10%;
 }
 
-.about {
+.about, .block, .form {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10%;
 }
 
 img {
@@ -116,15 +120,86 @@ img {
     border: 1px solid aliceblue;
 }
 
-.picture {
+.picture, .social {
     padding: 1em;
 }
 
-.container {
-    width: 40%;
+.container, form {
+    line-height: 1.5em;
+    width: 50%;
     padding: 1em;
     font-family: 'Montserrat';
     text-align: justify;
     border-left: 2px solid aliceblue;
     color: aliceblue;
+}
+
+.block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em;
+}
+
+.card {
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: 'Montserrat';
+    color: aliceblue;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    width: 50%;
+}
+
+.icon {
+    color: aliceblue;
+    margin: 10px;
+    font-size: 2em;
+}
+
+.form {
+    text-align: center;
+    font-family: 'Montserrat';
+    color: aliceblue;
+}
+
+[required], .btn {
+    width: 300px;
+    margin: 10px;
+}
+
+#message {
+    height: 150px;
+}
+
+.btn {
+    background-color: #041E42;
+    color: aliceblue;
+    border-radius: 25px;
+    border: 1px solid aliceblue;
+    padding: 10px;
+    font-size: 1em;
+}
+
+input {
+    border-radius: 15px;
+    padding-left: 10px;
+    height: 25px;
+}
+
+
+footer {
+    text-align: center;
+    color: aliceblue;
+    font-family: 'Montserrat';
+    margin: 10px;
 }
