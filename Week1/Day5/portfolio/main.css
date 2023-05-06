@@ -6,17 +6,125 @@
     box-sizing: border-box;
 }
 
-body {
-    background-image: url(4k-2695569_1920.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+html, body {
+    height: 100%;
 }
 
-h1, h2 {
-    font-family: 'Montserrat';
-    color: white;
+/* .intro {
+        background-image: url(keyboard-886462_1920.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 0;
+    } */
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    list-style-type: none;
+    height: 50px;
+    position: fixed;
+    background-color: #041E42;
+}
+
+.list-item {
+    display: block;
+    width: 200px;
     text-align: center;
+    padding: 15px;
+
+    /* transition-property: width, background-color;
+    transition-duration: 1s, 500ms; */
+}
+
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    color: aliceblue;
+}
+
+/* .list-item:hover {
+    background-color: #002D62;
+    width: 300px;
+} */
+
+#logo:hover {
+    transform: rotate(10deg);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+
+/* .list.item {
+    width: 200px;
+    padding: 15px;
+} */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(4k-2695569_1920.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 100vh;
+    width: 100vw; */
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+}
+
+#intro {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 2em;
+    color: aliceblue;
+}
+
+section > h1 {
+    text-align: center;
+    font-family: 'Montserrat';
+    color: aliceblue;
+}
+
+#about {
+    padding: 5em;
+}
+
+.about {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+img {
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    border: 1px solid aliceblue;
+}
+
+.picture {
+    padding: 1em;
+}
+
+.container {
+    width: 40%;
+    padding: 1em;
+    font-family: 'Montserrat';
+    text-align: justify;
+    border-left: 2px solid aliceblue;
+    color: aliceblue;
 }
