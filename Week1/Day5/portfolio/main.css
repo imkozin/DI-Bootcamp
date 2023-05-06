@@ -184,6 +184,7 @@ img {
 .btn {
     background-color: #041E42;
     color: aliceblue;
+    font-family: 'Montserrat';
     border-radius: 25px;
     border: 1px solid aliceblue;
     padding: 10px;
@@ -194,6 +195,7 @@ input {
     border-radius: 15px;
     padding-left: 10px;
     height: 25px;
+    font-family: 'Montserrat';
 }
 
 
