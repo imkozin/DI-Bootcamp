@@ -34,10 +34,8 @@ sentence = "Hello World"
 
 
 
-# import random
-# mySentence = "Hello World"
-# print(mySentence)
-# for i in range(len(mySentence)-1, 0, -1):
-#     j = random.randint(0, i+1)
-#     mySentence[i], mySentence[j] = mySentence[j], mySentence[i]
-# print(mySentence)
+import random
+
+mySentence = "Hello World"
+random.shuffle(mySentence)
+print(mySentence)
