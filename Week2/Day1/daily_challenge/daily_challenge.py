@@ -5,16 +5,6 @@
 
 # Then, print the first and last characters of the given text.
 
-sentence = input("Write a string at least 10 characters long ")
-if len(sentence) < 10 :
-    print("string not long enough")
-elif len(sentence) > 10 :
-    print("string too long")
-else :
-    firstChar = sentence[0]
-    lastChar = sentence[-1]
-    print(firstChar, lastChar)
-
 # Using a for loop, construct the string character by character: Print the first character, then the second, then the third, until the full string is printed. For example:
 # The user enters "Hello World"
 # Then, you have to construct the string character by character
@@ -25,20 +15,16 @@ else :
 # Hello World
 
 sentence = "Hello World"
+for i in range(len(sentence)):
+    print(sentence[:i+1])
 
 
 # 4. Bonus: Swap some characters around then print the newly jumbled string (hint: look into the shuffle method). For example:
 
 # Hlrolelwod
-
-
-sentence = input("Write a string at least 10 characters long ")
-if len(sentence) < 10 :
-    print("string not long enough")
-elif len(sentence) > 10 :
-    print("string too long")
-else :
-    import random
-    mySentence = "Hello World"
-    random.random(mySentence)
-    print("".join(mySentence))
+import random
+mySentence = input('please write a sentence\n')
+mySentence_list = list(mySentence)
+random.shuffle(mySentence_list)
+shuffled_str = ''.join(mySentence) 
+print(shuffled_str)
