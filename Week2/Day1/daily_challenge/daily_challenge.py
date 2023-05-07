@@ -6,7 +6,6 @@
 # Then, print the first and last characters of the given text.
 
 sentence = input("Write a string at least 10 characters long ")
-sentence_length = len(sentence)
 if len(sentence) < 10 :
     print("string not long enough")
 elif len(sentence) > 10 :
@@ -33,9 +32,13 @@ sentence = "Hello World"
 # Hlrolelwod
 
 
-
-import random
-
-mySentence = "Hello World"
-random.shuffle(mySentence)
-print(mySentence)
+sentence = input("Write a string at least 10 characters long ")
+if len(sentence) < 10 :
+    print("string not long enough")
+elif len(sentence) > 10 :
+    print("string too long")
+else :
+    import random
+    mySentence = "Hello World"
+    random.random(mySentence)
+    print("".join(mySentence))
