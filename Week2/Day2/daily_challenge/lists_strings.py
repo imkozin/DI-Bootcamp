@@ -9,5 +9,5 @@ user_string = input("Type in a word without double letters: ")
 new_string = ''
 for i in range(len(user_string)):
     if i == 0 or user_string[i] != user_string[i-1]:
-        new_string = new_word + user_string[i]
+        new_string = new_string + user_string[i]
 print(new_string)
