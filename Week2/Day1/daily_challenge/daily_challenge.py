@@ -3,6 +3,17 @@
 # If it’s less than 10 characters, print a message which states “string not long enough”.
 # If it’s more than 10 characters, print a message which states “string too long”.
 
+sentence = input("Write a string at least 10 characters long ")
+if len(sentence) < 10 :
+    print("string not long enough")
+elif len(sentence) > 10 :
+    print("string too long")
+else :
+    firstChar = sentence[0]
+    lastChar = sentence[-1]
+    print(firstChar, lastChar)
+
+
 # Then, print the first and last characters of the given text.
 
 # Using a for loop, construct the string character by character: Print the first character, then the second, then the third, until the full string is printed. For example:
