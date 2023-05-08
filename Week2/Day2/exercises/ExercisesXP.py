@@ -89,12 +89,12 @@ for num in range(1, 21):
 # Instructions
 # Write a while loop that will continuously ask the user for their name, unless the input is equal to your name.
 
-# user_name = input("Please write your name: ")
-# while user_name != "Ivan":
-#   user_name = input("Please write your name: ")
-#   if user_name == "Ivan":
-#     print('Hello Ivan')
-#     break
+user_name = input("Please write your name: ")
+while user_name != "Ivan":
+  user_name = input("Please write your name: ")
+  if user_name == "Ivan":
+    print('Hello Ivan')
+    break
   
 
 # 🌟 Exercise 7: Favorite Fruits
@@ -106,16 +106,16 @@ for num in range(1, 21):
 # If the user’s input is in the favorite fruits list, print “You chose one of your favorite fruits! Enjoy!”.
 # If the user’s input is NOT in the list, print, “You chose a new fruit. I hope you enjoy”.
 
-# fav_fruit_list = []
-# fav_fruit = input("What are your favorites fruits, separated by space?")
-# print(fav_fruit)
-# fav_fruit_list.extend(fav_fruit.split())
-# print(fav_fruit_list)
-# fav_fruit = input("What is your most favorite fruit?")
-# if fav_fruit in fav_fruit_list:
-#   print("You chose one of your favorite fruits! Enjoy!")  
-# else:
-#     print("You chose a new fruit. I hope you enjoy")
+fav_fruit_list = []
+fav_fruit = input("What are your favorites fruits, separated by space?")
+print(fav_fruit)
+fav_fruit_list.extend(fav_fruit.split())
+print(fav_fruit_list)
+fav_fruit = input("What is your most favorite fruit?")
+if fav_fruit in fav_fruit_list:
+  print("You chose one of your favorite fruits! Enjoy!")  
+else:
+    print("You chose a new fruit. I hope you enjoy")
 
 # Exercise 8: Who Ordered A Pizza ?
 # Instructions
@@ -123,15 +123,15 @@ for num in range(1, 21):
 # As they enter each topping, print a message saying you’ll add that topping to their pizza.
 # Upon exiting the loop print all the toppings on the pizza pie and what the total price is (10 + 2.5 for each topping).
 
-# topping_list = []
-# topping = input("What topping do you want, enter quit to stop?")
-# while topping != 'quit':
-#    topping_list.append(topping)
-#    print("Adding " + topping + " to your pizza...")
-#    topping = input("What topping would you like?")
-# print("Your pizza toppings are: " + str(topping_list))
-# total_price = 10 + 2.5 * len(topping_list)
-# print("Total price: $" + str(total_price))
+topping_list = []
+topping = input("What topping do you want, enter quit to stop?")
+while topping != 'quit':
+   topping_list.append(topping)
+   print("Adding " + topping + " to your pizza...")
+   topping = input("What topping would you like?")
+print("Your pizza toppings are: " + str(topping_list))
+total_price = 10 + 2.5 * len(topping_list)
+print("Total price: $" + str(total_price))
 
 # Exercise 9: Cinemax
 # Instructions
@@ -139,48 +139,41 @@ for num in range(1, 21):
 # if a person is under the age of 3, the ticket is free.
 # if they are between 3 and 12, the ticket is $10.
 # if they are over the age of 12, the ticket is $15.
-
-    
-
 # Ask a family the age of each person who wants a ticket.
-
 # Store the total cost of all the family’s tickets and print it out.
 
-# ages = []
-# age = int(input("How old are you?"))
-# while age != 'done':
-#       break
-# ages.append(age)
-# age = int(input("How old are you?"))
+ages = []
+age = int(input("How old are you?"))
+while age != 'done':
+      break
+ages.append(age)
+age = int(input("How old are you?"))
 
-# total_cost = 0
-# for i in ages:
-#     if i < 3:
-#         price = 0
-#     elif i <= 12:
-#         price = 10
-#     else:
-#         price = 15
-# print("The total price for family tickets is " + str(total_cost * ages))
+total_cost = 0
+for i in ages:
+    if i < 3:
+        price = 0
+    elif i <= 12:
+        price = 10
+    else:
+        price = 15
+print("The total price for family tickets is " + str(total_cost * ages))
 
-# initialize the list to store ages and total ticket cost
-# ages = []
-# total_cost = 0
 
-# while True:
-#     age = input("Enter an age (or 'done' to finish): ")
-#     if age == 'done':
-#         break
-#     age = int(age)
-#     ages.append(age)
-#     if age < 3:
-#         ticket_price = 0
-#     elif age <= 12:
-#         ticket_price = 10
-#     else:
-#         ticket_price = 15
-#     total_cost += ticket_price
-# print("The total cost of all tickets is $" + str(total_cost))
+while True:
+    age = input("Enter an age (or 'done' to finish): ")
+    if age == 'done':
+        break
+    age = int(age)
+    ages.append(age)
+    if age < 3:
+        ticket_price = 0
+    elif age <= 12:
+        ticket_price = 10
+    else:
+        ticket_price = 15
+    total_cost += ticket_price
+print("The total cost of all tickets is $" + str(total_cost))
 
 
 
@@ -190,7 +183,7 @@ for num in range(1, 21):
 
 teen_list = ['David', 'Jacob', 'Avi', 'Yoni', 'Lior']
 for i in teen_list:
-    age = int(input(f"How old is {teen_list[i]}?"))
+    age = int(input("How old is are you?"))
     if 16 <= age <= 21:
        teen_list.remove(i)
        print("The following teenagers are allowed to watch the movie:")
@@ -208,10 +201,22 @@ sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Egg sandwich", "Sabih s
 finished_sandwiches = []
 for i in sandwich_orders:
    finished_sandwiches.append(i)
-print(f"I made your {i}")
+print(f"I made your " + i)
+print(finished_sandwiches)
 
 # Exercise 11 : Sandwich Orders#2
 # Instructions
 # Using the list sandwich_orders from the previous exercise, make sure the sandwich ‘pastrami’ appears in the list at least three times.
 # Add code near the beginning of your program to print a message saying the deli has run out of pastrami, and then use a while loop to remove all occurrences of ‘pastrami’ from sandwich_orders.
 # Make sure no pastrami sandwiches end up in finished_sandwiches.
+
+sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Egg sandwich", "Sabih sandwich", "Pastrami sandwich"]
+sandwich_orders.append("Pastrami sandwich")
+sandwich_orders.append("Pastrami sandwich")
+while "Pastrami sandwich" in sandwich_orders:
+   sandwich_orders.remove("Pastrami sandwich")
+finished_sandwiches = []
+for i in sandwich_orders:
+   finished_sandwiches.append(i)
+   print(f"I made your " + i)
+print(finished_sandwiches)
