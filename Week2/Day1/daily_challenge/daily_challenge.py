@@ -3,15 +3,15 @@
 # If it’s less than 10 characters, print a message which states “string not long enough”.
 # If it’s more than 10 characters, print a message which states “string too long”.
 
-sentence = input("Write a string at least 10 characters long ")
-if len(sentence) < 10 :
-    print("string not long enough")
-elif len(sentence) > 10 :
-    print("string too long")
-else :
-    firstChar = sentence[0]
-    lastChar = sentence[-1]
-    print(firstChar, lastChar)
+# sentence = input("Write a string at least 10 characters long ")
+# if len(sentence) < 10 :
+#     print("string not long enough")
+# elif len(sentence) > 10 :
+#     print("string too long")
+# else :
+#     firstChar = sentence[0]
+#     lastChar = sentence[-1]
+#     print(firstChar, lastChar)
 
 
 # Then, print the first and last characters of the given text.
@@ -34,8 +34,11 @@ for i in range(len(sentence)):
 
 # Hlrolelwod
 import random
-mySentence = input('please write a sentence\n')
+# mySentence = input('please write a sentence\n')
+mySentence = "Hello World"
 mySentence_list = list(mySentence)
+print(mySentence_list)
 random.shuffle(mySentence_list)
-shuffled_str = ''.join(mySentence) 
+print(mySentence_list)
+shuffled_str = ''.join(mySentence_list) 
 print(shuffled_str)
