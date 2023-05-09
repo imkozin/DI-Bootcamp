@@ -92,9 +92,9 @@ for num in range(1, 21):
 user_name = input("Please write your name: ")
 while user_name != "Ivan":
   user_name = input("Please write your name: ")
-  if user_name == "Ivan":
-    print('Hello Ivan')
-    break
+#   if user_name == "Ivan":
+#     print('Hello Ivan')
+#     break
   
 
 # 🌟 Exercise 7: Favorite Fruits
@@ -129,7 +129,8 @@ while topping != 'quit':
    topping_list.append(topping)
    print("Adding " + topping + " to your pizza...")
    topping = input("What topping would you like?")
-print("Your pizza toppings are: " + str(topping_list))
+str_toppings = " , ".join(topping_list) # create a string all the element
+print("Your pizza toppings are: " + str_toppings)
 total_price = 10 + 2.5 * len(topping_list)
 print("Total price: $" + str(total_price))
 
