@@ -7,14 +7,15 @@
 # Concatenate my_fav_numbers and friend_fav_numbers to a new variable called our_fav_numbers.
 
 
-my_fav_numbers = [5, 7, 10, 21]
-my_fav_numbers.extend((24, 28))
+my_fav_numbers = {5, 7, 10, 21}
+my_fav_numbers.add(24)
+my_fav_numbers.add(28)
 print(my_fav_numbers)
-my_fav_numbers.pop()
+my_fav_numbers.remove(28)
 print(my_fav_numbers)
 
-friend_fav_numbers = [1, 2, 3, 4]
-our_fav_numbers = my_fav_numbers + friend_fav_numbers
+friend_fav_numbers = {1, 2, 3, 4}
+our_fav_numbers = my_fav_numbers.union(friend_fav_numbers)
 print(our_fav_numbers)
 
 # Exercise 2: Tuple
@@ -143,30 +144,10 @@ print("Total price: $" + str(total_price))
 # Ask a family the age of each person who wants a ticket.
 # Store the total cost of all the family’s tickets and print it out.
 
-ages = []
-age = int(input("How old are you?"))
-while age != 'done':
-      break
-ages.append(age)
-age = int(input("How old are you?"))
-
 total_cost = 0
-for i in ages:
-    if i < 3:
-        price = 0
-    elif i <= 12:
-        price = 10
-    else:
-        price = 15
-print("The total price for family tickets is " + str(total_cost * ages))
-
-
-while True:
-    age = input("Enter an age (or 'done' to finish): ")
-    if age == 'done':
-        break
-    age = int(age)
-    ages.append(age)
+family = int(input("Enter number of family members: "))
+for _ in range(family):
+    age = int(input("How old are you? "))
     if age < 3:
         ticket_price = 0
     elif age <= 12:
@@ -177,18 +158,16 @@ while True:
 print("The total cost of all tickets is $" + str(total_cost))
 
 
-
 # A group of teenagers are coming to your movie theater and want to watch a movie that is restricted for people between the ages of 16 and 21.
 # Given a list of names, write a program that asks teenager for their age, if they are not permitted to watch the movie, remove them from the list.
 # At the end, print the final list.
 
 teen_list = ['David', 'Jacob', 'Avi', 'Yoni', 'Lior']
 for i in teen_list:
-    age = int(input("How old is are you?"))
+    age = int(input(f"How old is are you {i}?"))
     if 16 <= age <= 21:
        teen_list.remove(i)
-       print("The following teenagers are allowed to watch the movie:")
-       print(teen_list)
+print(f"The following teenagers are allowed to watch the movie: {teen_list}")
 
 # Exercise 10 : Sandwich Orders
 # Instructions
@@ -202,7 +181,7 @@ sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Egg sandwich", "Sabih s
 finished_sandwiches = []
 for i in sandwich_orders:
    finished_sandwiches.append(i)
-print(f"I made your " + i)
+   print(f"I made your " + i)
 print(finished_sandwiches)
 
 # Exercise 11 : Sandwich Orders#2
@@ -211,12 +190,12 @@ print(finished_sandwiches)
 # Add code near the beginning of your program to print a message saying the deli has run out of pastrami, and then use a while loop to remove all occurrences of ‘pastrami’ from sandwich_orders.
 # Make sure no pastrami sandwiches end up in finished_sandwiches.
 
-sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Egg sandwich", "Sabih sandwich", "Pastrami sandwich"]
-sandwich_orders.append("Pastrami sandwich")
-sandwich_orders.append("Pastrami sandwich")
+sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Egg sandwich", "Sabih sandwich", "Pastrami sandwich", "Pastrami sandwich", "Pastrami sandwich"]
+finished_sandwiches = []
+print("Sorry, we ran out of pastrami!")
 while "Pastrami sandwich" in sandwich_orders:
    sandwich_orders.remove("Pastrami sandwich")
-finished_sandwiches = []
+
 for i in sandwich_orders:
    finished_sandwiches.append(i)
    print(f"I made your " + i)
