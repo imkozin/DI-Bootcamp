@@ -163,11 +163,12 @@ print("The total cost of all tickets is $" + str(total_cost))
 # At the end, print the final list.
 
 teen_list = ['David', 'Jacob', 'Avi', 'Yoni', 'Lior']
-for i in teen_list:
-    age = int(input(f"How old is are you {i}?"))
+allowed = []
+for name in teen_list:
+    age = int(input(f"How old is are you {name}?"))
     if 16 <= age <= 21:
-       teen_list.remove(i)
-print(f"The following teenagers are allowed to watch the movie: {teen_list}")
+       allowed.append(name)
+print(f"The following teenagers are allowed to watch the movie: {allowed}")
 
 # Exercise 10 : Sandwich Orders
 # Instructions
