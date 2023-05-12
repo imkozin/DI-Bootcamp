@@ -7,7 +7,7 @@
 
 def reverse_sentence():
     # sentence = input("Plese write a comma separated words: ")
-    sentence = 'hello, without, team, black, laptop'
+    sentence = 'hello, world, team, black, laptop'
     words = [word for word in sentence.split(', ')]
     new_sentence = sorted(words)
     print(', '.join(new_sentence))

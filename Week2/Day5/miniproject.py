@@ -21,15 +21,15 @@
 # After contemplating the question above, think about splitting your code into smaller pieces (functions).
 # Remember to follow the single responsibility principle! each function should do one thing and do it well!
 
+
 board = [
-    [' ', ' ', ' '],
-    ['  ', ' ', ' '],
-    [' ', ' ', ' '],
+    ['X', ' ', ' '],
+    [' ', 'X', ' '],
+    ['O', ' ', 'X'],
 ]
 
-print("********************")
+print("*************")
 for row in board:
-    print("    " + row[0] + " | " + row[1] + " | " + row[2] + " | ")
-    print("-----|-----|-----")
-print("********************")
-
+    print("* " + row[0] + " | " + row[1] + " | " + row[2] + " *")
+    print("*---|---|---*")
+print("*************")
