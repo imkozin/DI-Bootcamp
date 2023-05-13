@@ -15,7 +15,6 @@
 # Note: The 4 functions above are just an example. You can implement many more helper functions or choose a completely different appoach if you want.
 
 
-
 # Tips : Consider The Following:
 # What functionality will need to accur every turn to make this program work?
 # After contemplating the question above, think about splitting your code into smaller pieces (functions).
@@ -51,6 +50,7 @@ def print_board():
             print("", board[x][y], end=" |")
     print('\n+---+---+---+')
 
+
 def modify_array(num, turn):
     num -= 1
     if num == 0:
@@ -73,7 +73,6 @@ def modify_array(num, turn):
         board[2][2] = turn
 
 
-        
 def check_winner(board):
     # X axes
     if board[0][0] == 'X' and board[0][1] == 'X' and board[0][2] == 'X':
@@ -129,32 +128,33 @@ def check_winner(board):
     else:
         return "N"
 
+
 leave_loop = False
 turn_counter = 0
 
-while(leave_loop == False):
-        # It's a player turn
-        if turn_counter % 2 == 1:
-            print_board()
-            num_picked = int(input("\nChoose a number [1=9]: "))
-            if num_picked >= 1 or num_picked <= 9:
-                modify_array(num_picked, 'X')
-                possible_num.remove(num_picked)
-            else:
-                print("Invalid input. Please try again.")
-            turn_counter += 1
-        # it's computer's turn 
+while (leave_loop == False):
+    # It's a player turn
+    if turn_counter % 2 == 1:
+        print_board()
+        num_picked = int(input("\nChoose a number [1=9]: "))
+        if num_picked >= 1 or num_picked <= 9:
+            modify_array(num_picked, 'X')
+            possible_num.remove(num_picked)
         else:
-            while True:
-                cpu_turn = random.choice(possible_num)
-                print('\nCpu choice ', cpu_turn)
-                if cpu_turn in possible_num:
-                    modify_array(cpu_turn, '0')
-                    possible_num.remove(cpu_turn)
-                    turn_counter += 1
-                    break
-        winner = check_winner(board)
-        if winner != 'N':
-            print_board()
-            print("\n Game over! Thank you for playing!")
-            break
+            print("Invalid input. Please try again.")
+        turn_counter += 1
+    # it's computer's turn
+    else:
+        while True:
+            cpu_turn = random.choice(possible_num)
+            print('\nCpu choice ', cpu_turn)
+            if cpu_turn in possible_num:
+                modify_array(cpu_turn, '0')
+                possible_num.remove(cpu_turn)
+                turn_counter += 1
+                break
+    winner = check_winner(board)
+    if winner != 'N':
+        print_board()
+        print("\n Game over! Thank you for playing!")
+        break
