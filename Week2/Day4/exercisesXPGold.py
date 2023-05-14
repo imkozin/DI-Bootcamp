@@ -20,6 +20,7 @@ def get_age(year, month, day):
     # Hard-code current year and month
     current_year = 2023
     current_month = 5
+    current_day = 11
 
     # Calculate the age
     age = current_year - year
