@@ -8,7 +8,8 @@
 def reverse_sentence():
     # sentence = input("Plese write a comma separated words: ")
     sentence = 'hello, world, team, black, laptop'
-    words = [word for word in sentence.split(', ')]
-    new_sentence = sorted(words)
+    words = [word for word in sentence.split(', ')] 
+    new_sentence = sorted(words) # sorted is used when new list created which is sorted
+    # sort func is used to sort initial list
     print(', '.join(new_sentence))
 reverse_sentence()
