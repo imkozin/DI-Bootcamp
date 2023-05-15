@@ -10,13 +10,7 @@ class Farm:
         else:
             self.animals[new_animal] = quantity
 
-        print(self.animals)
-
-    # def get_animal_types(self):
-    # #     unique_animals = set(self.animals)
-    # #     animal_types = sorted(list(unique_animals))
-    # #     print(animal_types)
-    # #     return animal_types
+        print(self.animals)        
 
     #     for animal in self.animals:
     #         while self.animals.count(animal) > 1:
@@ -30,15 +24,31 @@ class Farm:
             print(f"{animal} : {quantity}")
         print("\n \t E-I-E-I-O!")
 
-    # def get_short_info(self):
-    #     animal_types = self.get_animal_types()
-    #     animal_string = ", ".join(animal_types)
-    #     print(f"McDonald's farm has {animal_string}")
+    def get_animal_types(self):
+        animal_types = list(self.animals.keys())
+        return sorted(animal_types)
+        # animal_types = sorted(list(set(unique_animals))
+        # return animal_types
+
+    def get_short_info(self):
+        all_animals = self.get_animal_types()
+        for animal, quantity in self.animals.items():
+
+            if quantity > 1:
+                position_animal = all_animals.index(animal)
+                all_animals[position_animal] += 's'
+        #animal_types = self.get_animal_types()
+        # animal_string = ", ".join(animal_types)
+        joining_animals = ', '.join(all_animals[0:-1])
+        sentence = f"McDonald's farm has {joining_animals} and {all_animals[-1]}"
+        print(sentence)
+        # print(f"McDonald's farm has {all_animals}")
 
 macdonald = Farm("McDonald")
 macdonald.add_animal('cow', 5)
 macdonald.add_animal('sheep')
-macdonald.add_animal('sheep')
+macdonald.add_animal('cat', 2)
 macdonald.add_animal('goat', 12)
-# print(macdonald.get_animal_types())
+macdonald.get_animal_types()
 macdonald.get_info()
+macdonald.get_short_info()
