@@ -125,15 +125,26 @@ else:
 # Upon exiting the loop print all the toppings on the pizza pie and what the total price is (10 + 2.5 for each topping).
 
 topping_list = []
-topping = input("What topping do you want, enter quit to stop?")
-while topping != 'quit':
+# topping = input("What topping do you want, enter quit to stop?")
+# while topping != 'quit':
+#    topping_list.append(topping)
+#    print("Adding " + topping + " to your pizza...")
+#    topping = input("What topping would you like?")
+# str_toppings = " , ".join(topping_list) # create a string all the element
+# print("Your pizza toppings are: " + str_toppings)
+# total_price = 10 + 2.5 * len(topping_list)
+# print("Total price: $" + str(total_price))
+
+total = float(10)
+while True:
+   topping = input("What topping do you want, enter quit to stop?")
+   if topping == 'quit':
+      break
    topping_list.append(topping)
-   print("Adding " + topping + " to your pizza...")
-   topping = input("What topping would you like?")
-str_toppings = " , ".join(topping_list) # create a string all the element
-print("Your pizza toppings are: " + str_toppings)
-total_price = 10 + 2.5 * len(topping_list)
-print("Total price: $" + str(total_price))
+   
+for topping in topping_list:
+   total += 2.5
+print(f"Your pizza will have these toppings {topping_list}")
 
 # Exercise 9: Cinemax
 # Instructions

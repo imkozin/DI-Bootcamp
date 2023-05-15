@@ -1,19 +1,19 @@
 user_word = input("Enter a word: ")
 my_dict = {}
-# for i in range(len(user_word)):
-#     letter = user_word[i]
-#     if letter in my_dict:
-#         my_dict[letter].append(i)
-#     else:
-#         my_dict[letter] = [i]
-# print(my_dict)
-
-for position, letter in enumerate(user_word):
+for i in range(len(user_word)):
+    letter = user_word[i]
     if letter in my_dict:
-        my_dict[letter].append(position)
+        my_dict[letter].append(i)
     else:
-        my_dict[letter] = [position]
+        my_dict[letter] = [i]
 print(my_dict)
+
+# for position, letter in enumerate(user_word):
+#     if letter in my_dict:
+#         my_dict[letter].append(position)
+#     else:
+#         my_dict[letter] = [position]
+# print(my_dict)
 # items_purchase = {
 #   "Water": "$1",
 #   "Bread": "$3",
