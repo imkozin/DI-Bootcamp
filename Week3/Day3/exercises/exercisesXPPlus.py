@@ -86,10 +86,32 @@ holiday()
 # Uranus: orbital period 84.016846 Earth years
 # Neptune: orbital period 164.79132 Earth years
 # So if you are told someone is 1,000,000,000 seconds old, the function should output that they are 31.69 Earth-years old.
-import datetime
 
-def jupiter_age():
-    age = int(input("What is your age in years? "))
-    earth = age * 31557600
-    mercury = 
-jupiter_age()
+def calculate_age(age_seconds):
+
+    # Calculate age on each planet
+    orbital_periods = {
+        'Earth': 1.0,
+        'Mercury': 0.2408467,
+        'Venus': 0.61519726,
+        'Mars': 1.8808158,
+        'Jupiter': 11.862615,
+        'Saturn': 29.447498,
+        'Uranus': 84.016846,
+        'Neptune': 164.79132
+    }
+
+    age_on_planets = {}
+    for planet, orbital_period in orbital_periods.items():
+        age_on_planets[planet] = age_seconds / (earth_year_seconds * orbital_period)
+
+    return age_on_planets
+
+age = int(input("Enter your age "))
+earth_year_seconds = 31557600
+age_seconds = age * earth_year_seconds
+age_on_planets = calculate_age(age_seconds)
+
+# Print age on each planet
+for planet, age in age_on_planets.items():
+    print(f"Age on {planet}: {age:.2f} Earth-years")
