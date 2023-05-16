@@ -71,7 +71,6 @@ class Currency:
             else:
                 self.amount += other.amount
                 return self
-
         else:
             self.amount += other
             return self
