@@ -15,3 +15,10 @@
 # translation = translator.translate("Bienvenue")
 # translation = translator.translate("A bientôt")
 # print translation
+
+# def translate(word):
+#     return translator.translate(word)
+
+
+# result = {k: translate(k) for k in french_words}
+# print(result)

@@ -47,10 +47,8 @@ class Currency:
     def __str__(self):
         return f"{self.amount} {self.currency}s"
     
-    def __int__(self, amount):
-        while self.amount != int(amount):
-            raise TypeError
-        return self.amount
+    def __int__(self):
+        return int(self.amount)
     
     def __repr__(self):
         return f"Currency {self.amount} {self.currency}s"
