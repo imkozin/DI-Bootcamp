@@ -115,3 +115,18 @@ age_on_planets = calculate_age(age_seconds)
 # Print age on each planet
 for planet, age in age_on_planets.items():
     print(f"Age on {planet}: {age:.2f} Earth-years")
+
+
+# def xpplus9():
+#     from faker import Faker
+
+#     fake = Faker()
+#     users = []
+
+#     def add_user():
+#         user = {
+#             'name': fake.name(),
+#             'address': fake.address(),
+#             'language_code': fake.language_code()
+#         }
+#         return user
