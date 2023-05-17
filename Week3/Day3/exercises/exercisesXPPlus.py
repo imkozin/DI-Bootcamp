@@ -117,16 +117,20 @@ for planet, age in age_on_planets.items():
     print(f"Age on {planet}: {age:.2f} Earth-years")
 
 
-# def xpplus9():
-#     from faker import Faker
+def faker():
+    from faker import Faker
 
-#     fake = Faker()
-#     users = []
+    fake = Faker()
+    users = []
 
-#     def add_user():
-#         user = {
-#             'name': fake.name(),
-#             'address': fake.address(),
-#             'language_code': fake.language_code()
-#         }
-#         return user
+    def add_user():
+        user = {
+            'name': fake.name(),
+            'address': fake.address(),
+            'language_code': fake.language_code()
+        }
+        return user
+    
+    for i in range(10):
+        users.append(add_user())
+    print(users)
