@@ -1,18 +1,15 @@
 import re
 import os
 
-sentence = 'A good book would sometimes cost as much as a good house.'
-
 class Text:
     def __init__(self, text):
         self.sentence = text # .replace(".",'').lower()
-        self.frequencies = self.frequencies()
+        self.frequencies_word = self.frequencies()
 
     def word_amount(self):
         lst_sentence = len(re.findall(r'\w+', sentence))
         print("Number of words:", lst_sentence)
 
-    word_amount(sentence)
 
     def get_frequency(self, word):
         try:
@@ -52,16 +49,16 @@ class Text:
         # return most_common
     def common_word(self):
         lst_common_words = []
-        for key, value in self.frequencies.items():
-            if value == max(self.frequencies.values()):
+        for key, value in self.frequencies_word.items():
+            if value == max(self.frequencies_word.values()):
                 lst_common_words.append(key)
         return lst_common_words
     
     def unique_words(self):
         unique_words = []
-        for key, value in self.frequencies.items():
+        for key, value in self.frequencies_word.items():
             if value == 1:
-                unique_words.append(value)
+                unique_words.append(key)
         return unique_words
         # my_list = self.sentence.split()
         # return sorted(list(set(my_list)))
@@ -72,13 +69,16 @@ class Text:
             all_story = story.read()
             return cls(all_story)
 
-# t1 = Text(sentence)
-# print(t1.frequencies("house"))
-# print(t1.common_word())
+# t1=Text("A good book would sometimes cost as much as a good house.")
+# # print(t1.count_occurrence_word(12))
+# print(t1.count_occurrence_word("house"))
+# print(t1.frequencies_word)
+# print(t1.most_common_words())
 # print(t1.unique_words())
-# t2 = Text.from_file('Day4/the_stranger.txt')
-# print(t2.frequencies("house"))
-# print(t2.common_word())
+t2 = Text.from_file('Day4/the_stranger.txt')
+# print(t2.count_occurrence_word("house"))
+# print(t2.frequencies_word)
+# print(t2.most_common_words())
 # print(t2.unique_words())
 
 # import nltk
@@ -118,7 +118,7 @@ class TextModification(Text):
 
     
     def special_char(self):
-        clean_text = re.sub(r'[^a-zA-Z0-9\s]', '', self.string)
+        clean_text = re.sub(r'[^a-zA-Z0-9\s]', '', self.sentence)
         return clean_text
     
     def frequency(self):
@@ -139,3 +139,7 @@ class TextModification(Text):
 # t1.stop_words()
 new_text = TextModification.from_file('Day4/the_stranger.txt')
 new_text.stop_words()
+new_text.punctuation()
+new_text.special_char()
+print(new_text.unique_words())
+print(new_text.get_frequency("the"))
