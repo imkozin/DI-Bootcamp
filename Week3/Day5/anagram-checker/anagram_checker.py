@@ -10,7 +10,7 @@
 
 class AnagramChecker:
     def __init__(self):
-        with open('Day5/mini-project/text-file.txt', "r") as f:
+        with open('Day5/anagram-checker/text-file.txt', "r") as f:
             self.words_list = f.read().split()
     
     
@@ -20,7 +20,7 @@ class AnagramChecker:
     def get_anagrams(self, word):
         anagrams_list = []
         for w in self.words_list:
-            if sorted(w) == sorted(word):
+            if w != word and sorted(w) == sorted(word):
                 anagrams_list.append(w)
         return anagrams_list
 
