@@ -7,13 +7,13 @@ def get_user_menu_choice():
 
 def print_results(results:dict):
     print("Thank you for playnig. Here are the results: ")
-    print(f"Wins: {results['wins']}\nLosses: {results['loss']}\nDraws: {results['draw']}")
+    print(f"Wins: {results['WIN']}\nLosses: {results['LOSS']}\nDraws: {results['DRAW']}")
 
 def main():
     result_history = {
-        'win' : 0,
-        'loss' : 0,
-        'draw' : 0
+        'WIN' : 0,
+        'LOSS' : 0,
+        'DRAW' : 0
     }
 
     user_choice = get_user_menu_choice()

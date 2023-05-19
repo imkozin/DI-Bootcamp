@@ -29,11 +29,11 @@ class Game:
     
     def get_game_result(self):
         if self.user_item == self.computer_item:
-            return "DRAW!"
+            return "DRAW"
         elif self.user_item == "p" and self.computer_item == "r" or self.user_item == "s" and self.computer_item == "p" or self.user_item == "r" and self.computer_item == "s":
-            return "WIN!"
+            return "WIN"
         else:
-            return "LOSS!"
+            return "LOSS"
         
 # play(self) – the function that will be called from outside the class (ie. from rock-paper-scissors.py). It will do 3 things:
 # Get the user’s item (rock/paper/scissors) and remember it
@@ -48,7 +48,7 @@ class Game:
 # draw means the user and the computer got the same item, and loss means that the user has lost.
         
     def play(self):
-        print(f"You selected {self.user_item}. The computer selected {self.computer_item}. {self.get_game_result}")
+        print(f"You selected {self.user_item}. The computer selected {self.computer_item}. {self.get_game_result()}")
         return self.get_game_result()
     
 #my_game = Game()
