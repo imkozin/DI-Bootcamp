@@ -81,32 +81,31 @@ t2 = Text.from_file('Day4/the_stranger.txt')
 # print(t2.most_common_words())
 # print(t2.unique_words())
 
-# import nltk
-# nltk.download('stopwords')
-# from nltk.corpus import stopwords
-# lst = stopwords.words('english')
-# print(lst)
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+lst = stopwords.words('english')
+print(lst)
 
-# from nltk.corpus import stopwords
 
 class TextModification(Text):
     def __init__(self, text):
         super().__init__(text)
 
-    # def stop_words(self):
-    #     lst = stopwords.words('english')
-    #     print(lst)
-
     def stop_words(self):
-        with open('Day4/stop_words.txt', "r") as f:
-            stop_words = f.read().lower()
-            words = self.sentence.split()
-            for word in words:
-                if word in stop_words:
-                    words.remove(word)
-            self.sentence = " ".join(words)
-            print(self.sentence)
-        return self.sentence
+        lst = stopwords.words('english')
+        print(lst)
+
+    # def stop_words(self):
+    #     with open('Day4/stop_words.txt', "r") as f:
+    #         stop_words = f.read().lower()
+    #         words = self.sentence.split()
+    #         for word in words:
+    #             if word in stop_words:
+    #                 words.remove(word)
+    #         self.sentence = " ".join(words)
+    #         print(self.sentence)
+    #     return self.sentence
 
     def punctuation(self):
         punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
