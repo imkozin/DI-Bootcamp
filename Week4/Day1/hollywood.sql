@@ -155,4 +155,13 @@
 -- DELETE from actor WHERE last_name = 'Depp'
 -- INSERT INTO actor (first_name, last_name, age, number_oscars, nationality)
 -- VALUES ('Johhny', 'Depp', '1963-06-09', 0, 'American')
-SELECT * from actor ORDER BY actor_id
+
+-- SELECT * from actor ORDER BY actor_id
+
+-- SELECT COUNT(actor_id) FROM actor 
+
+-- INSERT INTO actor (first_name, last_name, age, number_oscars, nationality, salary)
+-- VALUES ('Margot', 'Robbie', 0, 1000000)
+
+-- ERROR:  INSERT has more target columns than expressions
+-- LINE 163: ...actor (first_name, last_name, age, number_oscars
