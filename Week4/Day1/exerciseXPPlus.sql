@@ -53,4 +53,15 @@
 -- SELECT first_name, last_name FROM students WHERE id in (1, 3)
 
 -- Fetch the students whose birth_dates are equal to or come after 1/01/2000. (show all their info).
-SELECT id, first_name, last_name, TO_CHAR(birth_date, 'DD/MM/YYYY') AS birth_date FROM students WHERE birth_date >= '01/01/2000'
+-- SELECT id, first_name, last_name, TO_CHAR(birth_date, 'DD/MM/YYYY') AS birth_date FROM students WHERE birth_date >= '01/01/2000'
+
+-- Fetch the first four students. You have to order the four students alphabetically by last_name.
+-- SELECT id, first_name, last_name, TO_CHAR(birth_date, 'DD/MM/YYYY') AS birth_date FROM students WHERE id <= 4 ORDER BY last_name ASC
+-- Fetch the details of the youngest student.
+-- SELECT id, first_name, last_name, TO_CHAR(birth_date, 'DD/MM/YYYY') AS birth_date FROM students ORDER BY birth_date DESC LIMIT 1
+-- Fetch three students skipping the first two students.
+SELECT id, first_name, last_name, TO_CHAR(birth_date, 'DD/MM/YYYY') AS birth_date
+FROM students
+ORDER BY id
+OFFSET 2
+LIMIT 3
