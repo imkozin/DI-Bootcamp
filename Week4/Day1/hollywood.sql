@@ -165,3 +165,34 @@
 
 -- ERROR:  INSERT has more target columns than expressions
 -- LINE 163: ...actor (first_name, last_name, age, number_oscars
+
+-- select count(x) from actor
+-- SELECT MAX(salary) FROM actor
+
+-- subqueries 
+-- SELECT first_name FROM actor WHERE salary = (SELECT MAX(salary) FROM actor)
+
+-- not possible
+-- SELECT first_name MAX(salary) FROM actor
+
+--- SELECT * FROM actor
+-- SELECT LOWER(nationality) AS nationality, COUNT(*) AS number_people
+-- FROM actor 
+-- GROUP BY LOWER(nationality)
+-- HAVING LOWER(nationality) = 'israeli'
+
+-- having is a condition after GROUP BY
+-- because we cannot user WHERE after GROUP BY
+
+-- SELECT salary, COUNT(*)
+-- FROM ACTOR
+-- GROUP BY salary
+
+-- INSERT INTO actor (first_name, last_name, age, number_oscars, salary)
+-- VALUES ('Tom', 'Hanks', '1956-07-09', 2, 2000000)
+
+-- COUNT(*) - doesnt care if field is NULL
+-- COUNT(salary) - does care if field is NULL
+SELECT salary, COUNT(*)
+FROM actor
+GROUP BY salary
