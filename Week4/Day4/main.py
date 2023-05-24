@@ -30,7 +30,7 @@ cursor = connection.cursor()
 #         pass # print(e)
 #     finally:
 #         # if connection != None
-#         connection.close() # need to specifically  closed the connection
+#         connection.close() # need to specifically  close the connection
 
 # def get_all_actors():
 #     query_user = 'SELECT * FROM actor'
