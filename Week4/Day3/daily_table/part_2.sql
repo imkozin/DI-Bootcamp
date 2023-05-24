@@ -10,10 +10,10 @@
 --        ('To Kill a Mockingbird', 'Harper Lee')
 
 -- CREATE TABLE Student (
---     student_id SERIAL PRIMARY KEY,
---     name VARCHAR(100) NOT NULL UNIQUE,
---     age INTEGER, 
--- 	CONSTRAINT age_value CHECK (age <= 15)
+-- student_id SERIAL PRIMARY KEY,
+-- name VARCHAR(100) NOT NULL UNIQUE,
+-- age INTEGER, 
+-- CONSTRAINT age_value CHECK (age <= 15)
 -- )
 
 -- Insert students
@@ -26,7 +26,7 @@
 -- CREATE TABLE Library (
 --     book_fk_id INTEGER REFERENCES Book (book_id) ON DELETE CASCADE ON UPDATE CASCADE,
 --     student_fk_id INTEGER REFERENCES Student (student_id) ON DELETE CASCADE ON UPDATE CASCADE,
---     borrowed_date DATE,
+--     borrowed_date DATE, -- DEFAULT NOW() NOT NULL
 --     PRIMARY KEY (book_fk_id, student_fk_id)
 -- )
 

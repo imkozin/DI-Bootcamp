@@ -7,7 +7,7 @@
 -- CREATE TABLE Customer_Profile (
 --     id SERIAL PRIMARY KEY,
 --     isLoggedIn BOOLEAN DEFAULT false,
---     customer_id INT REFERENCES Customer (id)
+--     customer_id INT UNIQUE REFERENCES Customer (id)
 -- )
 
 -- INSERT INTO Customer (first_name, last_name)
@@ -25,10 +25,8 @@
 
 -- INSERT INTO Customer_Profile (isLoggedIn, customer_id)
 -- VALUES 
--- ((SELECT false FROM customer
--- WHERE first_name = 'Emma'),
---  (SELECT id FROM customer
--- WHERE first_name = 'Emma'))
+-- ( DEFAULT, (SELECT id FROM customer
+-- WHERE first_name = 'Jerome'))
 
 -- select * from customer_profile
 -- The first_name of the LoggedIn customers
@@ -45,7 +43,7 @@
 -- ON cp.customer_id = c.id
 
 -- The number of customers that are not LoggedIn
--- SELECT c.id as number
+-- SELECT COUNT(*) as number
 -- FROM customer AS c
 -- JOIN customer_profile AS cp
 -- ON cp.customer_id = c.id

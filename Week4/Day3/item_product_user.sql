@@ -11,18 +11,22 @@
 -- 	price DECIMAL NOT NULL
 -- )
 
--- INSERT INTO product_orders (order_id, order_date, customer_name)
--- VALUES (3, '2023-05-10', 'Peter Parker')
-
 -- SELECT * from product_orders
 -- SELECT * FROM items
+
+-- INSERT INTO product_orders (order_id, order_date, customer_name)
+-- VALUES 
+-- (1, '2023-05-01', 'John Doe'),
+-- (2, '2023-05-05', 'Jane Smith'),
+-- (3, '2023-05-10', 'Peter Parker')
+
 -- INSERT INTO items (order_id, item, price)
 -- VALUES 
 -- (1, 'IPhone', 1000),
 -- (2, 'MacBook', 2000),
 -- (1, 'AirPods', 200),
 -- (3, 'AppleWatch', 800),
--- (2, 'IPad', 1500)
+-- (2, 'IPad', 1500),
 -- (3, 'IPhone', 1200)
 
 
@@ -59,4 +63,3 @@
 -- WHERE u.user_id = 1 AND po.order_id = 1
 
 -- select * from items
-
