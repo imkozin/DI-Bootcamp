@@ -58,15 +58,15 @@
 -- ON l.book_fk_id = b.book_id
 
 -- Select the average age of the children, that borrowed the book Alice in Wonderland
--- SELECT AVG(s.age) AS avg_age
--- FROM Student AS s
--- JOIN Library AS l
--- ON s.student_id = l.student_fk_id
--- JOIN Book AS b
--- ON l.book_fk_id = b.book_id
--- WHERE b.title = 'Alice in Wonderland'
+SELECT AVG(s.age) AS avg_age
+FROM Student AS s
+JOIN Library AS l
+ON s.student_id = l.student_fk_id
+JOIN Book AS b
+ON l.book_fk_id = b.book_id
+WHERE b.title = 'Alice In Wonderland'
 
 -- Delete a student from the Student table, what happened in the junction table ?
 -- DELETE FROM student WHERE name = 'Patrick' - Nothing he didn't borrow a book
-SELECT * FROM Library
+-- SELECT * FROM Library
 -- DELETE FROM STUDENT WHERE name = 'John' - there are info about 3 borrowed books since we put CASCADE for deleting value
