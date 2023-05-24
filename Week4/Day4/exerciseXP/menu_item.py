@@ -9,10 +9,15 @@ def manage_connection(query):
             user='ivankozin',
             password='2158310'
         )
-        with connection.cursor() as cursor:
-            cursor.execute(query)
-            result = cursor.fetchall()
-            return result
+        with connection:
+            with connection.cursor() as cursor:
+                if "SELECT" in query:
+                    cursor.execute(query)
+                    result = cursor.fetchall()
+                    return result
+                else:
+                    cursor.execute(query)
+                    connection.commit()
     except Exception as e:
         print(e)
     finally:
@@ -33,14 +38,21 @@ class MenuItem:
     def delete_item(self):
         query_user = f"""
         DELETE FROM menu_items
-        WHERE item_name = {self.item_name} and item_price = {self.item_price}
+        WHERE item_name = '{self.item}' AND item_price = {self.price}
         """
         manage_connection(query_user)
 
-item = MenuItem('Burger', 35)
-item.save_item()
-# item.delete()
-# item.update('Veggie Burger', 37)
+    def update_item(self, new_name, new_price):
+        query_user = f"""UPDATE menu_items
+        SET item_name = '{new_name}', item_price = {new_price}
+        WHERE item_name = '{self.item}'
+        """
+        manage_connection(query_user)
+
+# item = MenuItem('Burger', 35)
+# item.save_item()
+# item.delete_item()
+# item.update_item('Veggie Burger', 37)
 # item2 = MenuManager.get_by_name('Beef Stew')
 # items = MenuManager.all()
 

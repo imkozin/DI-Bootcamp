@@ -1,19 +1,28 @@
 import psycopg2
+from menu_item import *
 
-def manage_connection(query):
-    try:
-        connection = psycopg2.connect(
-            host='localhost',
-            port='5432',
-            database='Restaurant',
-            user='ivankozin',
-            password='2158310'
-        )
-        with connection.cursor() as cursor:
-            cursor.execute(query)
-            result = cursor.fetchall()
+class MenuManager:
+        
+    @classmethod
+    def get_by_name(cls, name):
+        query_user = f"""
+        SELECT item_name FROM menu_items 
+        WHERE item_name = '{name}'
+        """
+        if manage_connection(query_user) == []:
+            return None
+        else:
+            result = manage_connection(query_user)
             return result
-    except Exception as e:
-        print(e)
-    finally:
-        connection.close()
+        
+    @classmethod
+    def all_items(cls):
+        query_user = f"""
+        SELECT * FROM menu_items
+        """
+        result = manage_connection(query_user)
+        return result
+
+# item2 = MenuManager.get_by_name('Beef Stew')
+items = MenuManager.all_items()
+print(items)
