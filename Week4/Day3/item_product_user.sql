@@ -11,14 +11,12 @@
 -- 	price DECIMAL NOT NULL
 -- )
 
--- SELECT * from product_orders
--- SELECT * FROM items
-
 -- INSERT INTO product_orders (order_id, order_date, customer_name)
 -- VALUES 
 -- (1, '2023-05-01', 'John Doe'),
 -- (2, '2023-05-05', 'Jane Smith'),
 -- (3, '2023-05-10', 'Peter Parker')
+-- RETURNING *
 
 -- INSERT INTO items (order_id, item, price)
 -- VALUES 
@@ -28,6 +26,7 @@
 -- (3, 'AppleWatch', 800),
 -- (2, 'IPad', 1500),
 -- (3, 'IPhone', 1200)
+-- RETURNING *
 
 
 -- Create a function that returns the total price for a given order.
@@ -39,27 +38,29 @@
 -- GROUP BY customer_name
 
 -- CREATE TABLE users (
---     user_id SERIAL PRIMARY KEY,
---     username VARCHAR(50) NOT NULL,
---     email VARCHAR(100) NOT NULL
+-- user_id SERIAL PRIMARY KEY,
+-- username VARCHAR(50) NOT NULL,
+-- email VARCHAR(100) NOT NULL
 -- )
-
--- ALTER TABLE product_orders
--- ADD COLUMN user_id INT REFERENCES users(user_id)
 
 -- INSERT INTO users (username, email)
 -- VALUES 
 -- ('john.doe', 'john.doe@example.com'),
 -- ('jane.smith', 'jane.smith@example.com'),
--- ('alex.wilson', 'alex.wilson@example.com'),
 -- ('spiderman', 'peter.parker@example.com')
+-- RETURNING *
 
--- SELECT SUM(i.price) AS total_price
--- FROM product_orders AS po
--- JOIN items AS i 
--- ON i.order_id = po.order_id
--- LEFT JOIN users AS u
--- ON u.user_id = po.user_id
--- WHERE u.user_id = 1 AND po.order_id = 1
+-- ALTER TABLE product_orders
+-- ADD COLUMN user_id SERIAL REFERENCES users(user_id)
 
--- select * from items
+-- SELECT * from product_orders
+-- SELECT * FROM items
+
+-- Create a function that returns the total price for a given order of a given user.
+SELECT SUM(i.price) AS total_price
+FROM product_orders AS po
+JOIN items AS i 
+ON i.order_id = po.order_id
+LEFT JOIN users AS u
+ON u.user_id = po.user_id
+WHERE u.user_id = 3 AND po.order_id = 3
