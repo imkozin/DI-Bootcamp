@@ -29,9 +29,9 @@ def create_table():
     except:
         return None
     
-    get_countries()
     conn.commit()
     conn.close()
     cur.close()
 
 # create_table()
+# get_countries()

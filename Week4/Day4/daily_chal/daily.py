@@ -30,7 +30,7 @@ def get_countries():
     cur.close()
     
 
-# get_countries()
+get_countries()
 
 def add_to_json():
     # API endpoint for fetching country data
@@ -61,5 +61,5 @@ def add_to_json():
 
 
 # Call the function to write countries to the JSON file
-add_to_json()
+#add_to_json()
 
