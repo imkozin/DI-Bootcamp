@@ -19,6 +19,7 @@ def show_user_menu():
             show_restaurant_menu()
         elif user_input == 'E':
             main()
+            quit()
         else:
             print("Invalid choice, choose from one of the given options")
 
@@ -50,6 +51,6 @@ def show_restaurant_menu():
 
 def main():
     show_restaurant_menu()
-    return "Thank you! See you next time!"
+    print("Thank you! See you next time!")
 
 show_user_menu()
