@@ -1,0 +1,93 @@
+{
+    "animals": [
+        {
+            "id" :1,
+            "name": "Dog",
+            "legs": 4,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 2
+        },
+        {
+            "id": 2,
+            "name": "Domestic Cat",
+            "legs": 2,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 1
+        },
+        {
+            "id": 3,
+            "name": "Panther",
+            "legs": 2,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 1 
+        },
+        {
+            "id": 4,
+            "name": "Popugay",
+            "legs": 2,
+            "weight": 1.67,
+            "height":3.2,
+            "speed": 34,
+            "family": 8 
+        },
+        {
+            "id": 4,
+            "name": "Tarantula",
+            "legs": 8,
+            "weight": 0.67,
+            "height":1.2,
+            "speed": 20,
+            "family": 6
+        },
+        {
+            "id": 4,
+            "name": "Crocodile",
+            "legs": 4,
+            "weight": 10.67,
+            "height":5.2,
+            "speed": 15,
+            "family": 4
+        }
+    ],
+    
+    "families": [
+        {
+            "id": 1,
+            "name": "Felidae"
+        },
+        {
+            "id": 2,
+            "name": "Caninae"
+        },
+        {
+            "id": 3,
+            "name": "mammal"
+        },
+        {
+            "id": 4,
+            "name": "reptile"
+        },
+        {
+            "id": 5,
+            "name": "insect"
+        },
+        {
+            "id": 6,
+            "name": "arachnid"
+        },
+        {
+            "id": 7,
+            "name": "amphibian"
+        },
+        {
+            "id": 8,
+            "name": "aves"
+        }
+    ]
+}
