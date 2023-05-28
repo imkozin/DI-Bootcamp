@@ -19,6 +19,7 @@ from django.urls import path
 from info.views import family, animal
 
 urlpatterns = [ 
-    path('admin/', admin.site.urls), path('family/<int:id>' family, name='family'),
-    path('animal/<int:id>', animal, name='animal')
+    path('admin/', admin.site.urls), 
+    path('family/<int:id>', family),
+    path('animal/<int:id>', animal)
 ]

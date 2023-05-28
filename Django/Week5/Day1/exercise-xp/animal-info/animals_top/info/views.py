@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 import json
 
 
@@ -14,22 +15,14 @@ print(get_data())
 def get_family(request, family_id):
     with open('Week5/Day1/exercise-xp/animal-info/animals_top/my_json.json') as file:
     
-        file_contents = json.load(file)
-
-    family = {}
-    for f in file_contents['families']:
-        if f['id'] == family_id:
-            family = f
-
-    animals = {}
-    for a in file_contents['animals']:
-        if a['family'] == family_id:
-            animal = a
-
-    context = {
-        'family' : family,
-        'animals' : animals
-    }
+        data = json.load(file)
+    
+    
+    context = {}
+    context['animal_list'] = []
+    for animal in data['animals']:
+        if animal['family'] == int(family_id):
+            context['animal_list'].append(animal['name'])
     
     return render(request, 'family.html', context)
 
@@ -41,11 +34,14 @@ def get_animal(request, animal_id):
     animal = {}
     for a in file_contents['animals']:
         if a['id'] == animal_id:
-            a = animal
+            context = {
+                "Name": animal['name'],
+                "Legs": animal['legs'],
+                "Weight": animal['weight'],
+                "Height": animal['height'],
+                "Speed": animal['speed']
+                }
 
-    context = {
-        'animal' : animal
-    }
 
     return render(request, 'animal.html', context)
 
