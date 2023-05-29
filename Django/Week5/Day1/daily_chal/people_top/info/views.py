@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 def show_list(request):
 
@@ -30,13 +29,11 @@ def show_list(request):
   }
 ]
 
-    sorted_people = sorted(people, key=lambda p: p['age'])
-    context = {
-        'people': sorted_people
-    }
-    return render(request, 'people/templates/people_list.html', context)
+    sorted_people = sorted(people, key=lambda person: person['age'])
+    context = {'people': sorted_people}
+    return render(request, 'people.html', context)
 
-def show_person(request, id):
+def show_person(request, id: int):
 
     people = [
         {
@@ -65,12 +62,10 @@ def show_person(request, id):
         }
     ]
 
-    person = []
+    person = None
     for p in people:
         if p['id'] == id:
             person = p
             break
-    context = {
-        'person': person
-    }
-    return render(request, 'people/template/person_detail.html', context)
+    context = {'person': person}
+    return render(request, 'person.html', context)
