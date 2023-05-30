@@ -20,6 +20,6 @@ from my_numbers.views import persons_phonenumber, persons_name
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('persons/phonenumber/<str:phone_number>/', persons_phonenumber, name='persons_phonenumber'),
-    path('persons/name/<str:name>/', persons_name, name='persons_name')
+    path('persons/phonenumber/<str:phone_number>/', persons_phonenumber),
+    path('persons/name/<str:name>/', persons_name)
 ]
