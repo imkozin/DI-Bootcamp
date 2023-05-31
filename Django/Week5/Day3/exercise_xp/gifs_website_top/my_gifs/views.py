@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Gif, Category
 from .forms import CategoryForm, GifForm
 
@@ -71,3 +71,28 @@ def add_gif_view(request):
     }
 
     return render(request, 'add_gif.html', context)
+
+def gif_view(request, gif_id):
+    gif = Gif.objects.get(id=gif_id)
+    
+    if request.method == 'POST':
+        if 'increment' in request.POST:
+            gif.likes += 1
+            gif.save()
+        elif 'decrement' in request.POST:
+            gif.likes -= 1
+            gif.save()
+    
+    context = {
+        'gif': gif
+    }
+    return render(request, 'gif.html', context)
+
+def popular_gifs(request):
+    gifs = Gif.objects.filter(likes__gt=0).order_by('-likes')
+
+    context = {
+        'gifs' : gifs
+    }
+
+    return render(request, 'popular_gifs.html', context)
