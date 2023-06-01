@@ -64,6 +64,7 @@ def add_gif_view(request):
         data = request.POST
         filled_form = GifForm(data)
         filled_form.save()
+        return redirect('gifs')
 
     gif_form = GifForm()
     context = {

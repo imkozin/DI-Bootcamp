@@ -20,7 +20,7 @@ from my_gifs.views import homepage, category_view, categories_view, gif_view, ad
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('gifs/', homepage),
+    path('gifs/', homepage, name='gifs'),
     path('category/<int:category_id>/', category_view),
     path('categories/', categories_view),
     path('gif/<int:gif_id>/', gif_view, name='gif_view'),
