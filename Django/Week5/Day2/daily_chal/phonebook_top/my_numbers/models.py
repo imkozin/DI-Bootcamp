@@ -7,3 +7,6 @@ class Phonebook(models.Model):
     email = models.EmailField(max_length=50, unique=True)
     phone_number = PhoneNumberField(max_length=20)
     address = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name

@@ -12,10 +12,10 @@ def persons_name(request, name_search: str):
     return render(request, 'names.html', context)
 
 
-def persons_phonenumber(request, phonenumber: str):
+def persons_phonenumber(request, number: str):
     person = None
     try:
-        person = Phonebook.objects.get(number_search = phonenumber)
+        person = Phonebook.objects.get(phone_number = number)
     except Phonebook.DoesNotExist:
         pass
 
