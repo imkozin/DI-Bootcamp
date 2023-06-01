@@ -9,4 +9,4 @@ class Phonebook(models.Model):
     address = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.name
+        return f'{self.name} | {self.phone_number}'
