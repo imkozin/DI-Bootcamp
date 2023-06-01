@@ -35,14 +35,14 @@ def categories_view(request):
 
     return render(request, 'categories.html', context)
 
-def gif_view(request, gif_id):
-    gif = gif.get_object_or_404(gif_id, Gif)
+# def gif_view(request, gif_id):
+#     gif = gif.get_object_or_404(gif_id, Gif)
 
-    context = {
-        'gif' : gif
-    }
+#     context = {
+#         'gif' : gif
+#     }
 
-    return render(request, 'gif.html', context)
+#     return render(request, 'gif.html', context)
 
 def add_category_view(request):
 
@@ -87,6 +87,7 @@ def gif_view(request, gif_id):
     context = {
         'gif': gif
     }
+    
     return render(request, 'gif.html', context)
 
 def popular_gifs(request):
