@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-# from . import views
+from rent.views import all_rentals, all_customers, all_vehicles, rental_info
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('rent/all_rentals/', all_rentals),
+    path('rent/all_customers/', all_customers),
+    path('rent/all_vehicles/', all_vehicles),
+    path('rent/rental_info/<int:pk>/', rental_info)
 ]
