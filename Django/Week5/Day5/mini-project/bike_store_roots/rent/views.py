@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.db.models import F
 from .models import *
-import datetime
+from .forms import CustomerForm, VehicleForm, RentalForm
 from django.http import HttpResponse
 
 # Create your views here.
@@ -55,6 +55,33 @@ def rental_info(request, pk):
 # If the customer or the vehicle does not exist, show a user-friendly error message.
 # If the vehicle is currently being rented, show a relevant error message.
 
+def add_rental(request):
+    if request.method == 'POST':
+        filled_form = RentalForm(request.POST)
+        if filled_form.is_valid():
+            customer = filled_form.cleaned_data['customer']
+            vehicle = filled_form.cleaned_data['vehicle']
+
+            if Rental.objects.filter(vehicle=vehicle, return_date=None).exists():
+                error_message = 'Vehicle is currently being rented.'
+
+                context = {
+                    'form': filled_form,
+                    'error': error_message
+                }
+                return render(request, 'rent/add_vehicle.html', context)
+
+            rental = Rental(customer=customer, vehicle=vehicle)
+            rental.save()
+            return HttpResponse('Rental added successfully!')
+    else:
+        filled_form = RentalForm()
+        context = {
+            'form': filled_form
+        }
+
+    return render(request, 'rent/add_vehicle.html', context)
+
 # /rent/customer/<pk> - show the customer matching the given ID
 def customer_info(request, pk):
     customer = get_object_or_404(Customer, id=pk)
@@ -70,7 +97,19 @@ def customer_info(request, pk):
 
 # /rent/customer/add – provide a form to add a new customer
 
+def add_customer(request):
 
+    if request.method == 'POST':
+        form_filled = CustomerForm(request.POST)
+        if form_filled.is_valid():
+            form_filled.save()
+
+    customer_form = CustomerForm()
+    context = {
+        'form' : customer_form
+    }
+
+    return render(request, 'rent/add_customer.html', context)
 
 # /rent/vehicle/ - show all vehicles, grouped into their groups (‘bike’ and ‘scooter’)
 
@@ -105,3 +144,18 @@ def vehicle_info(request, pk):
     return render(request, 'rent/vehicle_info.html', context)
 
 # /rent/vehicle/add – provide a form to add a new vehicle.
+
+def add_vehicle(request):
+    if request.method == 'POST':
+        form_filled = VehicleForm(request.POST)
+        if form_filled.is_valid():
+            form_filled.save()
+        else:
+            print(form_filled.errors)
+
+    vehicle_form = VehicleForm()
+    context = {
+        'form': vehicle_form
+    }
+
+    return render(request, 'rent/add_vehicle.html', context)
