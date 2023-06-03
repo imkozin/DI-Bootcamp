@@ -13,9 +13,9 @@ class VehicleForm(forms.ModelForm):
 
 class RentalForm(forms.ModelForm):
     customer = forms.ModelChoiceField(queryset=Customer.objects.all(), label='Customer')
-    vehicle = forms.ModelChoiceField(queryset=Vehicle.objects.all(), label='Vehicle')
+    vehicle = forms.ModelChoiceField(queryset=Vehicle.objects.exclude(rental__return_date=None), label='Vehicle')
 
     class Meta:
         model = Rental
-        fields = ('rental_date', 'customer', 'vehicle',)
-        widgets = {'rental_date': forms.DateInput(attrs={'type' : 'date'})}
+        fields = ('customer', 'vehicle', 'rental_date')
+        widgets = {'rental_date': forms.DateInput(attrs={'type': 'date'})}
