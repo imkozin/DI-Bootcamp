@@ -7,10 +7,25 @@
     <title>Search</title>
 </head>
 <body>
-    <form method="GET" action="">
+    {% block title %}
+        Search by name or phone number
+    {% endblock title %}
+
+    {% block content %}
+    <form method="POST">
         {% csrf_token %}
-        <input type="text" name="query" placeholder="Enter name or phone number">
+        <!-- {% if query %}
+            {{ form }}
+            <input type="hidden" name="query" value="{{ query }}">
+        {% else %}
+            {{ form }}
+            <input type="text" name="query" placeholder="Enter name or phone number">
+        {% endif %} -->
+        <label>
+            <input type="text" name="search" placeholder="Search">
+        </label>
         <button type="submit">Search</button>
     </form>
+    {% endblock content %}
 </body>
 </html>
