@@ -56,10 +56,21 @@ def rental_info(request, pk):
 # If the vehicle is currently being rented, show a relevant error message.
 
 # /rent/customer/<pk> - show the customer matching the given ID
+def customer_info(request, pk):
+    customer = get_object_or_404(Customer, id=pk)
+
+    context = {
+        'title' : 'Customer Details',
+        'customer' : customer
+    }
+
+    return render(request, 'rent/customer_info.html', context)
 
 
 
 # /rent/customer/add – provide a form to add a new customer
+
+
 
 # /rent/vehicle/ - show all vehicles, grouped into their groups (‘bike’ and ‘scooter’)
 
@@ -75,5 +86,22 @@ def all_vehicles(request):
 
 # /rent/vehicle/<pk> - show the specific vehicle
 # also show whether it’s currently being rented
+
+def vehicle_info(request, pk):
+    vehicle = get_object_or_404(Vehicle, id=pk)
+    is_rented = Rental.objects.filter(vehicle=vehicle, return_date=None).exists()
+
+    if is_rented:
+        status = 'Vehicle is on rent'
+    else:
+        status = 'Vehicle is in storage'
+
+    context = {
+        'title' : 'Vehicle details',
+        'vehicle' : vehicle,
+        'status' : status
+    }
+
+    return render(request, 'rent/vehicle_info.html', context)
 
 # /rent/vehicle/add – provide a form to add a new vehicle.
