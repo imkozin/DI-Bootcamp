@@ -2,7 +2,7 @@
 {% block title %} Home {% endblock %}
 {% block content %}
 <h1>
-    New Films:
+    My Films:
 </h1>
 <hr>
 {% for film in films %}
@@ -14,6 +14,13 @@
         {% for category in film.category.all %}
             {{category}}
         {% endfor %}
+        </p>
+        <p>Review:
+            {% for review in film.reviews.all %}
+                {{ review.review_text }}
+        </p>
+        <p> Rating: {{ review.rating }}
+            {% endfor %}
         </p>
         <p>Country: {{film.created_in_country}}
         </p>
