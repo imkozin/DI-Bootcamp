@@ -1,0 +1,33 @@
+from django.db import models
+
+# Create your models here.
+class Country(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+    
+class Category(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+    
+class Director(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
+
+class Film(models.Model):
+    title = models.CharField(max_length=30)
+    release_date = models.DateField(auto_now_add=True)
+    created_in_country = models.ForeignKey(Country,on_delete=models.CASCADE, related_name='film_created')
+    available_in_countries = models.ManyToManyField(Country, related_name='film_available')
+    category = models.ManyToManyField(Category, related_name='film_category')
+    director = models.ManyToManyField(Director, related_name='film_director')
+
+    def __str__(self):
+        return self.title
+    
