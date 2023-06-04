@@ -9,8 +9,15 @@
         <h3>{{ film.title }}</h3> directed by
         {% for director in film.director.all %}
             {{ director.first_name }} {{ director.last_name }}
-            {% if not forloop.last %}, {% endif %}
         {% endfor %}
+        <p>Category: 
+        {% for category in film.category.all %}
+            {{category}}
+        {% endfor %}
+        </p>
+        <p>Country: {{film.created_in_country}}
+        </p>
+        <p>Film released on {{film.release_date}}</p>
         <hr>
 {% endfor %}
 {% block footer %}

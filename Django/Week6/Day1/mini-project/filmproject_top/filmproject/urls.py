@@ -21,6 +21,6 @@ from films.views import HomePageView, AddFilmView, AddDirectorView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('homepage/', HomePageView.as_view(), name='homepage'),
-    path('add_film/', AddFilmView.as_view(), name='add-film'),
-    path('add_director/', AddDirectorView.as_view, name='add-director')
+    path('add_film/', AddFilmView.as_view(), name='add_film'),
+    path('add_director/', AddDirectorView.as_view(), name='add_director')
 ]

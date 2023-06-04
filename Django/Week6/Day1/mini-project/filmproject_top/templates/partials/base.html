@@ -15,18 +15,26 @@
     <div class="container">
         <ul class="nav bg-info">
           <li class="nav-item">
-            <a class="nav-link link-light" href="homepage">HOME</a>
+            <a class="nav-link link-light" href="/homepage">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" href="add-film">New Film</a>
+            <a class="nav-link link-light" href="/add_film">New Film</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" href="add-film">New Director</a>
+            <a class="nav-link link-light" href="/add_director">New Director</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/admin">Login</a>
           </li>
         </ul>
-      
+    </div>
         {% block content %}
+
         {% endblock %}
-      </div>
+    <footer class="footer mt-auto py-3 bg-info">
+        <div class="container text-center">
+            <span class="text-muted">Your footer content goes here</span>
+        </div>
+    </footer>
 </body>
 </html>
