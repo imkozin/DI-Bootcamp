@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from films.views import HomePageView
+from films.views import HomePageView, AddFilmView, AddDirectorView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('homepage/', HomePageView.as_view(), name='homepage')
+    path('homepage/', HomePageView.as_view(), name='homepage'),
+    path('add_film/', AddFilmView.as_view(), name='add-film'),
+    path('add_director/', AddDirectorView.as_view, name='add-director')
 ]
