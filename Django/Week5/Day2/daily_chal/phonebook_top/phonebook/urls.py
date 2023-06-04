@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.urls import path
-from my_numbers.views import persons_phonenumber, persons_name, search
+from my_numbers.views import phone_view, name_view, search
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('phones/<str:number>/', persons_phonenumber),
-    path('names/<str:name_search>/', persons_name),
-    path('search/', search, name='search'),
+    path('persons/<int:phone_number>', phone_view, name = 'phone'), #for search by phone
+    path('persons/<str:name>', name_view, name = 'name'), #for search by name
+    # path('persons-search/', search_by, name= 'search_by'),
+    path('search/', search, name='search'), #v2
 ]
 
 # "Peter"	"peter.parker@web.com"	"+14158391839"
