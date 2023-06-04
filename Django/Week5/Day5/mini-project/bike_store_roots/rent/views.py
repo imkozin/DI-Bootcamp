@@ -64,23 +64,23 @@ def add_rental(request):
 
             if Rental.objects.filter(vehicle=vehicle, return_date=None).exists():
                 error_message = 'Vehicle is currently being rented.'
-
+                print(error_message)
                 context = {
                     'form': filled_form,
                     'error': error_message
                 }
-                return render(request, 'rent/add_vehicle.html', context)
-
+                return render(request, 'rent/add_rental.html', context)
+            print("ADDING")
             rental = Rental(customer=customer, vehicle=vehicle)
             rental.save()
             return HttpResponse('Rental added successfully!')
-    else:
-        filled_form = RentalForm()
-        context = {
-            'form': filled_form
-        }
 
-    return render(request, 'rent/add_vehicle.html', context)
+    filled_form = RentalForm()
+    context = {
+        'form': filled_form
+    }
+
+    return render(request, 'rent/add_rental.html', context)
 
 # /rent/customer/<pk> - show the customer matching the given ID
 def customer_info(request, pk):
@@ -103,6 +103,8 @@ def add_customer(request):
         form_filled = CustomerForm(request.POST)
         if form_filled.is_valid():
             form_filled.save()
+        else:
+            print("ERRORS", form_filled.errors)
 
     customer_form = CustomerForm()
     context = {

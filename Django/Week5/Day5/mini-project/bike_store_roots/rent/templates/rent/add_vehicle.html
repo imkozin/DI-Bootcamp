@@ -7,11 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Add Vehicle</h1>
-    <form action="" method="POST">
+    <form method="post">
         {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit"> ADD </button>
-    </form>
+        {{ form.as_p }}
+        <button type="submit">Create Vehicle</button>
+      </form>
+      
+      {% if error %}
+      <p>{{ error }}</p>
+      {% endif %}
 </body>
 </html>

@@ -7,14 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post">
+    <h1>Add Rental</h1>
+    <form action="" method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Create Rental</button>
-      </form>
-      
-      {% if error %}
-      <p>{{ error }}</p>
-      {% endif %}
+        {{form.as_p}}
+        <button type="submit"> Create Rental </button>
+    </form>
+          
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
 </body>
 </html>

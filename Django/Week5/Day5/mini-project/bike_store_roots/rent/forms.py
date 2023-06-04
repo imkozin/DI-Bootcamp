@@ -13,7 +13,7 @@ class VehicleForm(forms.ModelForm):
 
 class RentalForm(forms.ModelForm):
     customer = forms.ModelChoiceField(queryset=Customer.objects.all(), label='Customer')
-    vehicle = forms.ModelChoiceField(queryset=Vehicle.objects.exclude(rental__return_date=None), label='Vehicle')
+    # vehicle = forms.ModelChoiceField(queryset=Vehicle.objects.exclude(rental__return_date=None), label='Vehicle')
 
     class Meta:
         model = Rental
