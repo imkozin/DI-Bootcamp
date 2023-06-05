@@ -1,13 +1,15 @@
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 from django.db.models.query import QuerySet
 from django.forms.models import BaseModelForm
 from django.http import HttpResponse
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, reverse, redirect
 from .models import *
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 from .forms import FilmForm, DirectorForm, PosterForm, ReviewForm
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 # Create your views here.
 # Create a class-based view, HomePageView, which inherits from generic.ListView. This view should be used for the URL route: /homepage, and render a template called homepage.html.
@@ -88,6 +90,38 @@ class AddDirectorView(CreateView):
     def get_context_data(self, **kwargs: Any):
         context = super(AddDirectorView, self).get_context_data(**kwargs)
         context['title'] = 'Add Director'
+        return context
+    
+class UpdateDirectorView(UserPassesTestMixin, UpdateView):
+    model = Director
+    template_name = 'add_director.html'
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse('homepage')
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def get_context_data(self, **kwargs: Any):
+        context = super(UpdateDirectorView, self).get_context_data(**kwargs)
+        context['title'] = 'Add Director'
+        return context
+    
+class UpdateFilmView(UserPassesTestMixin, UpdateView):
+    model = Film
+    template_name = 'add_film.html'
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse('homepage')
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def get_context_data(self, **kwargs: Any):
+        context = super(UpdateFilmView, self).get_context_data(**kwargs)
+        context['title'] = 'Add Film'
         return context
 
 # def add_film(request):
