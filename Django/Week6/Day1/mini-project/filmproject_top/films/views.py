@@ -7,7 +7,7 @@ from .models import *
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
-from .forms import FilmForm, DirectorForm, ReviewForm
+from .forms import FilmForm, DirectorForm, PosterForm, ReviewForm
 
 # Create your views here.
 # Create a class-based view, HomePageView, which inherits from generic.ListView. This view should be used for the URL route: /homepage, and render a template called homepage.html.
@@ -37,6 +37,23 @@ class AddFilmView(CreateView):
     def get_context_data(self, **kwargs: Any):
         context = super(AddFilmView, self).get_context_data(**kwargs)
         context['title'] = 'Add Film'
+        return context
+    
+class AddPosterView(CreateView):
+    model = Poster
+    form_class = PosterForm
+    template_name = 'add_poster.html'
+    success_url = reverse_lazy('add_poster')
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+    
+    def get_success_url(self):
+        return reverse('homepage')
+    
+    def get_context_data(self, **kwargs: Any):
+        context = super(AddPosterView, self).get_context_data(**kwargs)
+        context['title'] = 'Add Poster'
         return context
     
 class AddReviewView(CreateView):

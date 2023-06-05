@@ -1,5 +1,5 @@
 from django import forms
-from .models import Film, Director, Review
+from .models import Film, Director, Poster, Review
 
 class FilmForm(forms.ModelForm):
     class Meta:
@@ -19,4 +19,10 @@ class ReviewForm(forms.ModelForm):
             'rating' : forms.RadioSelect
         }
 
-
+class PosterForm(forms.ModelForm):
+    class Meta:
+        model = Poster
+        fields = '__all__'
+        widgets = {
+            'image' : forms.ImageField
+        }
