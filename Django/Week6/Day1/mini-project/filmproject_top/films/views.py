@@ -97,32 +97,38 @@ class UpdateDirectorView(UserPassesTestMixin, UpdateView):
     template_name = 'add_director.html'
     fields = '__all__'
 
-    def get_success_url(self):
-        return reverse('homepage')
+    # def get_success_url(self):
+    #     return reverse('homepage')
 
     def test_func(self):
         return self.request.user.is_superuser
     
-    def get_context_data(self, **kwargs: Any):
-        context = super(UpdateDirectorView, self).get_context_data(**kwargs)
-        context['title'] = 'Add Director'
-        return context
+    def handle_no_permission(self):
+        return redirect('homepage')
+
+    # def get_context_data(self, **kwargs: Any):
+    #     context = super(UpdateDirectorView, self).get_context_data(**kwargs)
+    #     context['title'] = 'Add Director'
+    #     return context
     
 class UpdateFilmView(UserPassesTestMixin, UpdateView):
     model = Film
     template_name = 'add_film.html'
     fields = '__all__'
 
-    def get_success_url(self):
-        return reverse('homepage')
+    # def get_success_url(self):
+    #     return reverse('homepage')
 
     def test_func(self):
         return self.request.user.is_superuser
     
-    def get_context_data(self, **kwargs: Any):
-        context = super(UpdateFilmView, self).get_context_data(**kwargs)
-        context['title'] = 'Add Film'
-        return context
+    def handle_no_permission(self):
+        return redirect('homepage')
+    
+    # def get_context_data(self, **kwargs: Any):
+    #     context = super(UpdateFilmView, self).get_context_data(**kwargs)
+    #     context['title'] = 'Add Film'
+    #     return context
 
 # def add_film(request):
 #     if request.method == 'POST':
