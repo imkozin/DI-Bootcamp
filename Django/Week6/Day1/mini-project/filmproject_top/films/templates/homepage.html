@@ -2,7 +2,7 @@
 {% block title %} Home {% endblock %}
 {% block content %}
 <div class="container">
-    <h1> My Films: </h1>
+    <h1> Films: </h1>
     <div class="row">
         {% for film in films %}
         <div class="col-sm-4">
@@ -28,6 +28,16 @@
                     <p class=“card-title”>Country: {{film.created_in_country}}
                     </p>
                     <p class=“card-title”>Film released on {{film.release_date}}</p>
+
+                    <form action="{% url 'favorite_film' film.id %}" method="POST">
+                        {% csrf_token %}
+                        {% if film in user.favorite_films.all %}
+                            <button class="btn btn-secondary" type="submit">Remove from Favorites</button>
+                        {% else %}
+                            <button class="btn btn-primary" type="submit">Add to Favorites</button>
+                        {% endif %}
+                    </form>
+
                     {% if user.is_superuser %}
                     <p><a href="{% url 'edit_film' film.id %}" class="card-link">Edit</a></p>
                     <p><a href="{% url 'delete_film' film.id %}" class="card-link">Delete</a></p>

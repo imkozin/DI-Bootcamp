@@ -26,8 +26,8 @@ class CustomLoginView(LoginView):
         return reverse_lazy('profile')
 
 class ProfileView(View):
-    def get(self, request, user_id):
-        user = User.objects.get(id=user_id)
+    def get(self, request, pk):
+        user = User.objects.get(id=pk)
         return render(request, 'profile.html', {'user' : user})
 
 

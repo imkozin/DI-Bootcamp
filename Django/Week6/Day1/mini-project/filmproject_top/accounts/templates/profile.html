@@ -5,7 +5,37 @@
 <h3>Welcome, {{user.first_name}} {{user.last_name}}</h3>
 <p>Your username is {{ user.username }}</p>
 <p>Thank you for visiting and we're glad to see you again!</p>
-
-
+<h4>Your Favorite Films:</h4>
+    <ul>
+        {% for film in favorite_films %}
+            <li>{{ film.title }}</li>
+        {% empty %}
+            <li>No favorite films yet.</li>
+        {% endfor %}
+    </ul>
+<!-- <div class="container">
+    <h1>  My Films: </h1>
+    <div class="row">
+        {% for film in favorite_films %}
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+              <div class=“card-body”>
+                    <h3 class=“card-title”>{{ film.title }}</h3> 
+                    directed by
+                    {% for director in film.director.all %}
+                        {{ director.first_name }} {{ director.last_name }}
+                    {% endfor %}
+                    <p class=“card-title”>Category: 
+                    {% for category in film.category.all %}
+                        {{category}}
+                    {% endfor %}
+                    </p>
+                    <img style='width: 150px; height: 200px; margin-bottom: 10px;'  src='{{ film.poster.image }}' alt='{{ film.poster.explanation_img }}'>
+                </div>
+            </div>          
+        </div>
+        {% endfor %}
+    </div>
+</div> -->
 
 {% endblock content %}

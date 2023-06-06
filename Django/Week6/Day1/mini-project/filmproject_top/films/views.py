@@ -1,16 +1,17 @@
-from typing import Any, Dict, Optional
+from typing import Any #, Dict, Optional
 from django.db.models.query import QuerySet
-from django.forms.models import BaseModelForm
+# from django.forms.models import BaseModelForm
 from django.http import HttpResponse
-from django.http.response import HttpResponseRedirect
-from django.shortcuts import render, reverse, redirect
+# from django.http.response import HttpResponseRedirect
+from django.shortcuts import reverse, redirect, render, get_object_or_404
 from .models import *
-from django.views.generic import ListView
+from django.views.generic import DetailView, ListView, View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .forms import FilmForm, DirectorForm, PosterForm, ReviewForm
-from django.contrib.auth.mixins import UserPassesTestMixin
-from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+from accounts.models import UserProfile
+# from django.contrib.messages.views import SuccessMessageMixin
 
 # Create your views here.
 # Create a class-based view, HomePageView, which inherits from generic.ListView. This view should be used for the URL route: /homepage, and render a template called homepage.html.
@@ -138,6 +139,36 @@ class FilmDeleteView(UserPassesTestMixin, DeleteView): #SuccessMessageMixin
     
 def confirm_delete(request):
         return HttpResponse("Film has been deleted successfully")
+
+class FavouriteFilmView(LoginRequiredMixin, View):
+    def post(self, request, pk):
+        user_profile = UserProfile.objects.get(user=request.user)
+        film = Film.objects.get(id=pk)
+
+        if film in user_profile.favorite_films.all():
+            user_profile.favorite_films.remove(film)
+        else:
+            user_profile.favorite_films.add(film)
+
+        return redirect('profile', user_id=request.user.id)
+    
+    def get(self, request):
+        user_profile = UserProfile.objects.get(user=request.user)
+        favorite_films = user_profile.favorite_films.all()
+        return render(request, 'profile.html', {'user': user_profile, 'favorite_films': favorite_films})
+
+    
+class FilmDetailView(DetailView):
+    model = Film
+    template_name = 'film_detail.html'
+    context_object_name = 'film'
+
+
+    # def get_object(self, queryset=None):
+    #     pk = self.kwargs.get('pk')
+    #     film = get_object_or_404(Film, id=pk)
+    #     return film
+
     
     # def handle_no_permission(self):
     #     return redirect('login')
