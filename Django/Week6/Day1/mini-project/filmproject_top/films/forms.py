@@ -23,6 +23,4 @@ class PosterForm(forms.ModelForm):
     class Meta:
         model = Poster
         fields = '__all__'
-        widgets = {
-            'image' : forms.ImageField
-        }
+        exclude = ('film', )

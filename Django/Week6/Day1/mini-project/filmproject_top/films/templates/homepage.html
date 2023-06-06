@@ -1,32 +1,43 @@
 {% extends 'base.html' %}
 {% block title %} Home {% endblock %}
 {% block content %}
-<h1>
-    My Films:
-</h1>
-<hr>
-{% for film in films %}
-        <h3>{{ film.title }}</h3> directed by
-        {% for director in film.director.all %}
-            {{ director.first_name }} {{ director.last_name }}
+<div class="container">
+    <h1> My Films: </h1>
+    <div class="row">
+        {% for film in films %}
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+              <div class=“card-body”>
+                    <h3 class=“card-title”>{{ film.title }}</h3> directed by
+                    {% for director in film.director.all %}
+                        {{ director.first_name }} {{ director.last_name }}
+                    {% endfor %}
+                    <p class=“card-title”>Category: 
+                    {% for category in film.category.all %}
+                        {{category}}
+                    {% endfor %}
+                    </p>
+                    <img style='width: 150px; height: 200px; margin-bottom: 10px;'  src='{{ film.poster.image }}' alt='{{ film.poster.explanation_img }}'>
+                    <p class=“card-text”>Review:
+                        {% for review in film.reviews.all %}
+                            {{ review.review_text }}
+                    </p>
+                    <p class=“card-title”> Rating: {{ review.rating }}
+                        {% endfor %}
+                    </p>
+                    <p class=“card-title”>Country: {{film.created_in_country}}
+                    </p>
+                    <p class=“card-title”>Film released on {{film.release_date}}</p>
+                    {% if user.is_superuser %}
+                    <p><a href="{% url 'edit_film' film.id %}" class="card-link">Edit</a></p>
+                    <p><a href="{% url 'delete_film' film.id %}" class="card-link">Delete</a></p>
+                    {% endif %}
+                </div>
+            </div>          
+        </div>
         {% endfor %}
-        <p>Category: 
-        {% for category in film.category.all %}
-            {{category}}
-        {% endfor %}
-        </p>
-        <p>Review:
-            {% for review in film.reviews.all %}
-                {{ review.review_text }}
-        </p>
-        <p> Rating: {{ review.rating }}
-            {% endfor %}
-        </p>
-        <p>Country: {{film.created_in_country}}
-        </p>
-        <p>Film released on {{film.release_date}}</p>
-        <hr>
-{% endfor %}
+    </div>
+</div>
 {% block footer %}
 {% endblock %}
 {% endblock %}

@@ -32,7 +32,7 @@ class Film(models.Model):
         return self.title
     
 class Poster(models.Model):
-    image = models.ImageField
+    image = models.URLField()
     explanation_img = models.CharField(max_length=100)
     film = models.OneToOneField(Film, on_delete=models.CASCADE, related_name='poster')
 

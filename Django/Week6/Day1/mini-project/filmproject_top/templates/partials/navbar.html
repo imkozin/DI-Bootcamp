@@ -1,18 +1,18 @@
 <div class="container">
     <ul class="nav bg-info">
+      <!-- {% if user.is_superuser %} -->
+      <!-- {% endif %} -->
+
+      {% if user.is_authenticated %}
       <li class="nav-item">
         <a class="nav-link link-light" href="{% url 'homepage' %}">Home</a>
       </li>
-      {% if user.is_superuser %}
       <li class="nav-item">
         <a class="nav-link link-light" href="/films/add_film">Add Film</a>
       </li>
       <li class="nav-item">
         <a class="nav-link link-light" href="/films/add_director">Add Director</a>
       </li>
-      {% endif %}
-
-      {% if user.is_authenticated %}
       <li class="nav-item">
         <a class="nav-link link-light" href="/films/add_review">Add Review</a>
       </li>

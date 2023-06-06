@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2> Add Film </h2>
+    <h2>{{title}}</h2>
     <form action="" method="post">
         {%csrf_token%}
         {{form.as_p}}
-        {% include 'add_poster.html' %}
-        <button type="submit"> ADD </button>
+        <button type="submit"> SAVE </button>
     </form>
 
 {% endblock content %}
