@@ -2,9 +2,13 @@
 
 {% block content %}
   <h1>{{ film.title }}</h1>
-  <p>Director: {{ film.director }}</p>
+  <p>Director: {% for director in film.director.all %}
+    {{ director.first_name }} {{ director.last_name }}
+{% endfor %}</p>
   <p>Release Year: {{ film.release_date}}</p>
-  <p>Category: {{film.category}}</p>
+  <p>Category: {% for category in film.category.all %}
+    {{category}}
+{% endfor %}</p>
   <p>Country: {{film.created_in_country}}</p>
 
   {% endblock %}

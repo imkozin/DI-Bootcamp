@@ -5,7 +5,7 @@ from films.views import HomePageView, AddFilmView, AddDirectorView, AddReviewVie
 urlpatterns = [
     path('homepage/', HomePageView.as_view(), name='homepage'),
     path('add_film/', AddFilmView.as_view(), name='add_film'),
-    path('films/<int:pk>/', FilmDetailView.as_view(), name='film_detail'),
+    path('film_detail/<int:pk>/', FilmDetailView.as_view(), name='film_detail'),
     path('add_director/', AddDirectorView.as_view(), name='add_director'),
     path('add_review/', AddReviewView.as_view(), name='add_review'),
     path('edit_film/<int:pk>', FilmUpdateView.as_view(), name='edit_film'),
