@@ -14,7 +14,10 @@ class RegisterView(CreateView):
     success_url = reverse_lazy('login')
 
 def profile(request):
-    return render(request, 'profile.html')
+    context = {
+        'favorite_films': request.user.user_profile.favorite_films.all()
+    }
+    return render(request, 'profile.html', context)
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'

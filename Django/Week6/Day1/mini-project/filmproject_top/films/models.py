@@ -19,6 +19,13 @@ class Director(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+    
+class Producer(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
 
 class Film(models.Model):
     title = models.CharField(max_length=30)
@@ -27,6 +34,7 @@ class Film(models.Model):
     available_in_countries = models.ManyToManyField(Country, related_name='film_available')
     category = models.ManyToManyField(Category, related_name='film_category')
     director = models.ManyToManyField(Director, related_name='film_director')
+    producers = models.ManyToManyField(Producer, related_name='film_producer')
 
     def __str__(self):
         return self.title

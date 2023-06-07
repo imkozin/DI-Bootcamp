@@ -1,5 +1,6 @@
 from django import forms
-from .models import Film, Director, Poster, Review
+from .models import Film, Director, Poster, Review, Producer
+from django.forms import formset_factory
 
 class FilmForm(forms.ModelForm):
     class Meta:
@@ -24,3 +25,14 @@ class PosterForm(forms.ModelForm):
         model = Poster
         fields = '__all__'
         exclude = ('film', )
+
+class ProducerForm(forms.ModelForm):
+    class Meta:
+        model = Producer
+        fields = '__all__'
+
+
+ProducerFormSet = forms.modelformset_factory(Producer, form=ProducerForm, extra=1)
+
+
+

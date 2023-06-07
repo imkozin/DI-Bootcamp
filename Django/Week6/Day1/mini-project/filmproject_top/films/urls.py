@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from films.views import HomePageView, AddFilmView, AddDirectorView, AddReviewView, FilmUpdateView, FilmDeleteView, confirm_delete, FavouriteFilmView, FilmDetailView # DirectorUpdateView #AddPosterView
+from films.views import HomePageView, AddFilmView, AddDirectorView, AddReviewView, FilmUpdateView, FilmDeleteView, confirm_delete, manage_producers, FavouriteFilmView, FilmDetailView # DirectorUpdateView #AddPosterView
 
 urlpatterns = [
     path('homepage/', HomePageView.as_view(), name='homepage'),
@@ -12,4 +12,5 @@ urlpatterns = [
     path('delete_film/<int:pk>', FilmDeleteView.as_view(), name='delete_film'), 
     path('', confirm_delete, name='confirm'),
     path('favorite_film/<int:pk>/', FavouriteFilmView.as_view(), name='favorite_film'),
+    path('manage_producers/', manage_producers, name='producers')
 ]

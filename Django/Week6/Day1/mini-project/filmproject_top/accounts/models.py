@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_profile')
-    favorite_films = models.ManyToManyField('films.Film', related_name='favorite_films', blank=True)
+    favorite_films = models.ManyToManyField('films.Film', related_name='users', blank=True)
 
     def _str__(self):
         return f'Profile: {self.user.username}'

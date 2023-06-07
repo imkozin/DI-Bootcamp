@@ -6,6 +6,10 @@
         {%csrf_token%}
         {{form.as_p}}
         {% include 'add_poster.html' %}
+        {{ formset.management_form }}
+        {% for producer_form in formset %}
+          {{ producer_form.as_p }}
+        {% endfor %}
         <button type="submit"> ADD </button>
     </form>
 
