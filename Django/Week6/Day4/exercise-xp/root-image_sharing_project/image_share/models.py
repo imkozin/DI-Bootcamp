@@ -12,3 +12,4 @@ class Image(models.Model):
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=50) 
     user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='images')
+
