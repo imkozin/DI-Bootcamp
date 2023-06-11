@@ -8,15 +8,28 @@ from .serializers import StudentSerializer
 # Create your views here.
 class StudentListView(APIView):
 
+    # def get(self, request, *args, **kwargs):
+    #     if 'pk' in kwargs:
+    #         student = Student.objects.get(id=kwargs['id'])
+    #         serializer = StudentSerializer(student)
+    #         return Response(serializer.data)
+    #     else:
+    #         queryset = Student.objects.all()
+    #         serializer = StudentSerializer(queryset, many=True)
+    #         return Response(serializer.data)
+    def get_queryset(self):
+        queryset = Student.objects.all()
+        date_joined = self.request.query_params.get('date_joined')
+
+        if date_joined:
+            queryset = queryset.filter(date_joined__date=date_joined)
+
+        return queryset
+
     def get(self, request, *args, **kwargs):
-        if 'pk' in kwargs:
-            student = Student.objects.get(id=kwargs['id'])
-            serializer = StudentSerializer(student)
-            return Response(serializer.data)
-        else:
-            queryset = Student.objects.all()
-            serializer = StudentSerializer(queryset, many=True)
-            return Response(serializer.data)
+        queryset = self.get_queryset()
+        serializer = StudentSerializer(queryset, many=True)
+        return Response(serializer.data)
         
     def post(self, request, *args, **kwargs):
         serializer = StudentSerializer(data=request.data)
