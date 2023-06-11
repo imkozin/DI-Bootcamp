@@ -52,25 +52,25 @@ def create_rentals(number):
 
 # create_rentals(100)
 
-# fake = Faker(locale=['en_US', 'it_IT', 'fr_FR'])
+fake = Faker(locale=['en_US', 'it_IT', 'fr_FR'])
 
-# def create_customers(number):
+def create_customers(number):
 
-#     for _ in range(number):
+    for _ in range(number):
 
-#         first_name = fake.first_name()
-#         last_name = fake.last_name()
-#         email = fake.email()
-#         phone_number = fake.msisdn()
-#         address = fake.address()
+        first_name = fake.first_name()
+        last_name = fake.last_name()
+        email = fake.email()
+        phone_number = fake.msisdn()
+        address = fake.address()
 
-#         customer = Customer(first_name = first_name,
-#                             last_name = last_name,
-#                             email = email,
-#                             phone_number = phone_number, 
-#                             address = address)
-#         customer.save()
+        customer = Customer(first_name = first_name,
+                            last_name = last_name,
+                            email = email,
+                            phone_number = phone_number, 
+                            address = address)
+        customer.save()
 
-#     print(f"CREATED {number} Customers")
+    print(f"CREATED {number} Customers")
 
-# create_customers(100)
+create_customers(100)
