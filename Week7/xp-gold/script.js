@@ -27,9 +27,8 @@ let guestList = {
   sam: "Argentina"
 }
 
-// let userName = prompt('Enter your name');
-
 // Prompt the student for their name.
+let userName = prompt('Enter your name');
 
 // If the name is in the object, console.log the name of the student and the country they come from.
 // For example: "Hi! I'm [name], and I'm from [country]."
@@ -37,12 +36,12 @@ let guestList = {
 
 // If the name is not in the object, console.log: "Hi! I'm a guest."
 
-// if (userName in guestList) {
-//     let country = guestList[userName];
-//     console.log('Hi! I\'m ' + userName + ', and I\'m from ' + country)
-//     } else {
-//         console.log("Hi! I'm a guest.")
-// }
+if (userName in guestList) {
+    let country = guestList[userName];
+    console.log('Hi! I\'m ' + userName + ', and I\'m from ' + country)
+    } else {
+        console.log("Hi! I'm a guest.")
+}
 
 // Exercise 3 : Playing With Numbers
 
