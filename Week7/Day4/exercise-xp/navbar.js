@@ -17,11 +17,11 @@ createLi.innerText = 'Logout';
 
 
 // Finally, append this updated list node to the unordered list (<ul>), using the appendChild method.
-document.getUl.appendChild(getUl);
+getUl.appendChild(createLi);
 
 // Use the firstElementChild and the lastElementChild properties to retrieve the first and last <li> elements from their parent element (<ul>). Display the text of each link. (Hint: use the textContent property).
 getFisrtLi = getUl.firstElementChild;
 getLastLi = getUl.lastElementChild;
 
-console.log(getFisrtLi);
-console.log(getLastLi);
+console.log(getFisrtLi.textContent);
+console.log(getLastLi.textContent);
