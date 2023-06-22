@@ -15,6 +15,8 @@ for (let planet of planets) {
     const planetDiv = document.createElement('div');
     planetDiv.classList.add('planet');
     planetDiv.classList.add(planet.name.toLowerCase());
+    const text = document.createTextNode(planet.name);
+    planetDiv.appendChild(text);
 
     for (let i=0; i < planet.moons; i++) {
         const moonDiv = document.createElement('div');
