@@ -7,18 +7,30 @@ const getDiv = document.getElementById('container');
 console.log(getDiv)
 
 // Change the name “Pete” to “Richard”.
-const changeLi = document.body.children[1].children[1];
-changeLi.textContent = 'Richard';
+const ulOne = document.getElementsByClassName('list')[0];
+const lastChild = ulOne.lastElementChild;
+lastChild.textContent = 'Richard';
+// const changeLi = document.body.children[1].children[1];
+// changeLi.textContent = 'Richard';
 
 // Delete the second <li> of the second <ul>.
-const deleteLi = document.body.children[2].children[1].remove();
+const ulTwo = document.getElementsByClassName('list')[1];
+const secondChildTwo = ulTwo.children[1];
+secondChildTwo.remove();
+
+// const deleteLi = document.body.children[2].children[1].remove();
 
 // Change the name of the first <li> of each <ul> to your name. (Hint : use a loop)
-const allListClass = document.querySelectorAll('ul');
-for (let el of allListClass) {
-    const firstLi = el.querySelector('li');
-    firstLi.textContent = 'Ivan';
+for (let list of document.querySelectorAll('.list')) {
+    list.firstElementChild.textContent = 'Ivan';
 }
+
+
+// const allListClass = document.querySelectorAll('ul');
+// for (let el of allListClass) {
+//     const firstLi = el.querySelector('li');
+//     firstLi.textContent = 'Ivan';
+// }
 
 // Using Javascript:
 // Add a class called student_list to both of the <ul>'s.
