@@ -11,7 +11,7 @@ const action = ['-', '+', 'x', '/', '%'];
 // screen
 const out = document.querySelector('.calc-screen p');
 
-function clearAll () {
+function clearAll() {
     a = '';
     b = ''; 
     sign = '';
@@ -19,7 +19,37 @@ function clearAll () {
     out.textContent = '0';
 }
 
+// function plusMinus() {
+//     if (key === '+/-' && (a !== '' || b !== '')) {
+//         if (inputStage === 'a' && a < 0) {
+//             a = Math.abs(a);
+//             out.textContent = a;
+//             } 
+//         else {
+//             out.textContent = '-' + a;
+//         } 
+//         if (inputStage === 'b' && b < 0) {
+//         b = Math.abs(b);
+//         out.textContent = b;
+//         } else {
+//             out.textContent = '-' + b;
+//         }
+//         return;
+//         }
+// }
+
+function plusMinus() {
+    if (inputStage === 'a' && a !== '') {
+        a = -Math.abs(a);
+        out.textContent = a;
+    } else if (inputStage === 'b' && b !== '') {
+        b = -Math.abs(b);
+        out.textContent = b;
+    }
+}
+
 document.querySelector('.ac').onclick = clearAll;
+document.querySelector('.plus-minus').onclick = plusMinus;
 
 // document.querySelector('.plus-minus').onclick = () => {
 //     if (inputStage === 'a') {
@@ -42,6 +72,8 @@ document.querySelector('.buttons').onclick = (event) => {
     if (!event.target.classList.contains('btn')) return;
     // button ac clearAll pressed
     if (event.target.classList.contains('ac')) return;
+    // button +/- pressed
+    if (event.target.classList.contains('plus-minus')) return;
 
     out.textContent = '';
     // retrieve pressed button
@@ -54,20 +86,6 @@ document.querySelector('.buttons').onclick = (event) => {
             // console.log(a, b, sign);
             out.textContent = a;
         } 
-        // else if (key === '+/-' && (a !== '' || b !== '')) {
-        //     if (inputStage === 'a' && a < 0) {
-        //         a = Math.abs(a);
-        //         out.textContent = a;
-        //     } else if (inputStage === 'a' && a > 0) {
-        //         out.textContent = '-' + a;
-        //     } else if (inputStage === 'b' && b < 0) {
-        //         b = Math.abs(b);
-        //         out.textContent = b;
-        //     } else if (inputStage === 'b' && b > 0) {
-        //         out.textContent = '-' + b;
-        //     }
-        //     return;
-        // }
         else if (a !== '' && b !== '' && finish) {
             b = key;
             finish = false;
@@ -94,7 +112,7 @@ document.querySelector('.buttons').onclick = (event) => {
     // if button + - / X %
     if (action.includes(key)) {
         sign = key;
-        out.textContent = sign;
+        out.textContent = a;
         inputStage = 'b';
         console.table(a, b, sign);
         return;
