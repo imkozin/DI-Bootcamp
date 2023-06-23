@@ -19,25 +19,6 @@ function clearAll() {
     out.textContent = '0';
 }
 
-// function plusMinus() {
-//     if (key === '+/-' && (a !== '' || b !== '')) {
-//         if (inputStage === 'a' && a < 0) {
-//             a = Math.abs(a);
-//             out.textContent = a;
-//             } 
-//         else {
-//             out.textContent = '-' + a;
-//         } 
-//         if (inputStage === 'b' && b < 0) {
-//         b = Math.abs(b);
-//         out.textContent = b;
-//         } else {
-//             out.textContent = '-' + b;
-//         }
-//         return;
-//         }
-// }
-
 function plusMinus() {
     if (inputStage === 'a' && a !== '') {
         a = -Math.abs(a);
@@ -50,22 +31,6 @@ function plusMinus() {
 
 document.querySelector('.ac').onclick = clearAll;
 document.querySelector('.plus-minus').onclick = plusMinus;
-
-// document.querySelector('.plus-minus').onclick = () => {
-//     if (inputStage === 'a') {
-//         if (a !== '') {
-//             isPositive = !isPositive;
-//             a = isPositive ? Math.abs(a) : -Math.abs(a);
-//             out.textContent = isPositive ? a : '-' + a;
-//         }
-//     } else if (inputStage === 'b') {
-//         if (b !== '') {
-//             isPositive = !isPositive;
-//             b = isPositive ? Math.abs(b) : -Math.abs(b);
-//             out.textContent = isPositive ? b : '-' + b;
-//         }
-//     }
-// }
 
 document.querySelector('.buttons').onclick = (event) => {
     // not button pressed
