@@ -146,3 +146,28 @@ lastPara.addEventListener('mouseover', highlight);
 lastPara.addEventListener('mouseout', returnItemsToDefault);
 
 // Call the function highlight() on mouseover (ie. when the mouse pointer is moved onto the paragraph), and the function returnItemsToDefault() on mouseout (ie. when the mouse pointer is moved out of the paragraph). Look at this example
+
+// Exercise 5 : Event Listeners
+
+// Add many events listeners to one element on your webpage. Use the click, mouseover, mouseout and dblclick events.
+// Each listener should do a different thing, for instance - change position x, change position y, change color, change the font size… and more.
+const firstPara = document.body.firstElementChild;
+console.log(firstPara);
+
+firstPara.addEventListener('dblclick', function() {
+    firstPara.style.position = 'absolute';
+    firstPara.style.left = 50 + 'px';
+    firstPara.style.top = 700 + 'px';
+});
+
+firstPara.addEventListener('mouseover', function() {
+    firstPara.style.fontSize = '2rem';
+});
+
+firstPara.addEventListener('mouseout', function() {
+    firstPara.style.fontStyle = 'italic';
+})
+
+firstPara.addEventListener('click', function() {
+    firstPara.style.color = 'red';
+})
