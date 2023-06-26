@@ -1,4 +1,4 @@
-const myForm = document.querySelector('#libform');
+const myForm = document.forms.libform;
 const storySpan = document.querySelector('#story');
 const shuffleButton = document.querySelector('#shuffle-button');
 
@@ -8,7 +8,9 @@ const shuffleButton = document.querySelector('#shuffle-button');
 // let valueVerb = document.getElementById('verb');
 // let valuePlace = document.getElementById('place');
 
-myForm.addEventListener('submit', function (event) {
+myForm.addEventListener('submit', getValues);
+
+function getValues (event) {
     event.preventDefault();
     const valueNoun = event.target.elements.noun.value;
     const valueAdj = event.target.elements.adjective.value;
@@ -31,10 +33,34 @@ myForm.addEventListener('submit', function (event) {
         ];
         const randomIndex = Math.floor(Math.random() * stories.length);
         storySpan.textContent = stories[randomIndex];
-        }
-    });
+        };
+    };
     shuffleButton.addEventListener('click', function() {
         const randomIndex = Math.floor(Math.random() * stories.length);
         storySpan.textContent = stories[randomIndex];
 });
+
+
+// function getValues(event) {
+//     event.preventDefault();
+//     // const arrValues = [];
+//     let objValues = {};
+//     const allInputs = event.target.querySelectorAll('input');
+//     for (let input of allInputs) {
+//         if (inp.value === '') {
+//             alert('fill the form')
+//             return;
+//         }
+//         objValues[inp.id] = inp.values;
+//     }
+//     console.log(objValues);
+// }
+
+// function showStory(objValues) {
+//     const spanElem = document.getElementById('story');
+//     const text = `${objValues['person']} is from ${objValues['place']}. The ${objValues['noun']} is ${objValues['adjective']}, and he wants to ${objValues['verb']} with it}`;
+//     const textNode = document.createTextNode(text);
+//     spanElem.appendChild(textNode);
+// }
+
 
