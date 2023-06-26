@@ -1,6 +1,7 @@
 const myForm = document.forms.libform;
 const storySpan = document.querySelector('#story');
 const shuffleButton = document.querySelector('#shuffle-button');
+let stories;
 
 // let valueNoun = document.getElementById('noun');
 // let valueAdj = document.getElementById('adjective');
@@ -21,7 +22,7 @@ function getValues (event) {
     if ([valueNoun, valueAdj, valuePerson, valueVerb, valuePlace].includes('')) {
         alert('Input shouldn\'t be empty');
     } else {
-        const stories = [
+        stories = [
             `Once upon a time in a faraway place, there was a person named ${valuePerson}. They were known for their extraordinary ${valueAdj} skills. One day, while walking through the enchanted forest, they stumbled upon a magical ${valueNoun}. Curiosity ${valueVerb} them, and they decided to approach it.
             As soon as ${valuePerson} touched the enchanted ${valueNoun}, something incredible happened.
             In this magical world, ${valuePerson} discovered that their ${valueAdj} skills were greatly enhanced. They could ${valueVerb} faster than the wind, create ${valueAdj} artwork with a mere flick of their wrist, and communicate with animals through a secret language.
@@ -35,10 +36,11 @@ function getValues (event) {
         storySpan.textContent = stories[randomIndex];
         };
     };
-    shuffleButton.addEventListener('click', function() {
-        const randomIndex = Math.floor(Math.random() * stories.length);
-        storySpan.textContent = stories[randomIndex];
-});
+
+shuffleButton.addEventListener('click', function() {
+    const randomIndex = Math.floor(Math.random() * stories.length);
+    storySpan.textContent = stories[randomIndex];
+})
 
 
 // function getValues(event) {
