@@ -77,3 +77,28 @@ console.log(newUsers);
 // Example: { 'Bradley Bouley': 'Full Stack Resident' }
 // Hint: Step one, create an empty object.
 
+// Exercise 4 : Array To Object
+// Use a for loop to get this output { x: 1, y: 1, z: 2 };
+
+const newObj = {}
+const letters = ['x', 'y', 'z', 'z'];
+letters.forEach(letter => {
+    if (!newObj[letter]) {
+        newObj[letter] = 1
+    } else {
+        newObj[letter]++;
+    }
+})
+console.log(newObj);
+
+// Use the reduce() method to get this output { x: 1, y: 1, z: 2 };
+const count = letters.reduce((acc, letter) => {
+    if (acc[letter]) {
+        acc[letter]++;
+    } else {
+        acc[letter] = 1
+    }
+    return acc;
+}, {});
+
+console.log(count)
