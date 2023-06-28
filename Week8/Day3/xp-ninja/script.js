@@ -102,3 +102,61 @@ const count = letters.reduce((acc, letter) => {
 }, {});
 
 console.log(count)
+
+// Exercise 1 : Menu
+const menu = [
+    {
+      type : "starter",
+      name : "Houmous with Pita"
+    },
+    {
+      type : "starter",
+      name : "Vegetable Soup with Houmous peas"
+    },
+    {
+      type : "dessert",
+      name : "Chocolate Cake"
+    }
+]
+// Using an array method and ternary operator, check if at least one element in the menu array is a dessert.
+const isDessert = menu.some(item => item.type === 'dessert');
+console.log(isDessert ? 'At least one dessert is available' : 'Dessert on stop-list')
+
+// Using an array method, check if all the elements in the array are starter
+const isStarter = menu.every(item => item.type === 'starter')
+console.log(isStarter)
+
+// Using an array method, check if there is at least one element in the array that is a main course. If not, add a main course of your choice to the array.
+const isMain = menu.some(item => item.type === 'main course')
+if (!isMain) {
+    menu.push({type : 'main course', name : 'Beef Shawarma'})
+}
+console.log(menu)
+
+// Using an array method, add a key “vegetarian” (a boolean) to the menu array. The value of the key should be true if the name of the course contains at least one element from the vegetarian array.
+const vegetarian = ["vegetable", "houmous", "eggs", "vanilla", "potatoes"]
+
+const updatedMenu = menu.map(item => {
+    const isVegetarian = vegetarian.some(vegItem => item.name.toLowerCase().includes(vegItem.toLowerCase()));
+    return {...item, vegetarian: isVegetarian};
+});
+
+console.log(updatedMenu);
+
+
+// Exercise 2 : Chop Into Chunks
+// Write a JavaScript function that takes 2 parameters: a string and a number.
+// The function should chop the string into chunks of your chosen length (the second parameter), and the outcome should be represented in an array.
+// Example:
+
+function string_chop(str, num) {
+    const result = [];
+    for (let i = 0; i < str.length; i += num) {
+      const chop = str.slice(i, i + num);
+      result.push(chop);
+    }
+    return result;
+  }
+  
+console.log(string_chop('developers', 2));
+// ["de", "ve", "lo", "pe", "rs"] 
