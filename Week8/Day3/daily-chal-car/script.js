@@ -8,23 +8,21 @@ const inventory = [
 
   function getCarHonda(carInventory) {
     const firstHonda = carInventory.find(element => element.car_make === 'Honda');
-    carInventory.forEach(element => {
-        if (element.car_make.includes('Honda')) {
-            console.log(`This is a ${element.car_make} ${element.car_model} from ${element.car_year}`);
+    // carInventory.forEach(element => {
+    if (firstHonda) {
+            console.log(`This is a ${firstHonda.car_make} ${firstHonda.car_model} from ${firstHonda.car_year}`);
             return;
         }
-    });
-    console.log('First Honda:', firstHonda);
-  }
+    };
+    // console.log('First Honda:', firstHonda);
+// };
 
   getCarHonda(inventory); 
   // This is a Honda Accord from 1983
   // This is a Honda Accord from 1995
 
 function sortCarInventoryByYear(carInventory) {
-    const sorted = carInventory.sort(function (x, y) {
-        return x.car_year - y.car_year;
-    });
+    const sorted = carInventory.sort((x, y) => x.car_year - y.car_year);
     return sorted;
 }
 
