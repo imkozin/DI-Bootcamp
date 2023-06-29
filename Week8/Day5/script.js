@@ -25,6 +25,27 @@ function isAnagram(str1, str2) {
 //         }
 //     } return true
 // }
+
+// function isAnagram(sentence1, sentence2) {
+//     const str1 = sentence1.toLowerCase().split('').join('');
+//     const str2 = sentence2.toLowerCase().split('').join('')
+
+//     if (str1.length != str2.length) {
+//         return false;
+//     }
+
+//     const total = {}
+
+//     for (let letter of str1) {
+//         // if (total[letter] != null) {
+//         //     total[letter]++
+//         // } else {
+//         //     total[letter] = 1;
+//         // }
+//         total[letter] = total[letter] + 1 || 1;
+//     }
+// }
+
 console.log(isAnagram('Listen', 'Silent'));
 console.log(isAnagram('triangle', 'Integral'));
 console.log(isAnagram('Astronomer', 'Moon starer'));
