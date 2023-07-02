@@ -36,6 +36,7 @@ function getValues(e) {
 }
 
 function allTruthy(...params) {
+    console.log(params);
     return params.every(param => param === true);
 }
 
