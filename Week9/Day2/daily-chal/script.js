@@ -156,6 +156,7 @@ toJs(morse)
 })
 .then(result => {
     console.log(result)
+    return joinWords(result)
 })
 .catch((error) => {
     console.log(error)
@@ -163,7 +164,7 @@ toJs(morse)
 
 function joinWords(morseArray) {
     const myDiv = document.querySelector('div');
-    myDiv.innerText = `${userInput} gives you ${morseArray}`;
+    myDiv.innerText = `${userInput} in morse code will be ${morseArray}`;
 }
 
 // function isValidMorse(userInput) {
