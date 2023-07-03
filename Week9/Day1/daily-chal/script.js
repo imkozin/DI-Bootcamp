@@ -28,19 +28,22 @@ function getValues(e) {
     const formData = new FormData(myForm);
     const entries = formData.entries();
     const data = Object.fromEntries(entries);
-
     const dataString = JSON.stringify(data);
+    displayData(dataString);
+}
+
+function displayData(str) {
     const p = document.createElement('p');
-    p.innerText = dataString;
+    p.innerText = str;
     document.body.appendChild(p);
 }
 
 function allTruthy(...params) {
     console.log(params);
-    return params.every(param => param === true);
+    return params.every(param => param != false);
 }
 
 
-console.log(allTruthy(true, true, true));
-console.log(allTruthy(true, false, true));
-console.log(allTruthy(5, 4, 3, 2, 1, 0));
+console.log(allTruthy(true, true, true)); // true
+console.log(allTruthy(true, false, true)); // false
+console.log(allTruthy(5, 4, 3, 2, 1, 0)); // false
