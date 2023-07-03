@@ -40,7 +40,8 @@ function displayData(str) {
 
 function allTruthy(...params) {
     console.log(params);
-    return params.every(param => param != false);
+    // return params.every(param => param != false);
+    return params.every(param => Boolean(param) === true);
 }
 
 
