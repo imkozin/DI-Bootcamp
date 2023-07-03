@@ -47,6 +47,6 @@ promiseOne
 });
 
 promiseTwo
-.then(error => {
+.catch(error => {
     console.log('Rejected: ', error);
 });
