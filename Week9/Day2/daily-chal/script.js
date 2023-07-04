@@ -132,7 +132,6 @@ const userInput = prompt('Enter a word or a sentence')
 function toMorse(morseJS, userInput) {
     const word = userInput.toLowerCase().split('');
     const morseArray = [];
-
     const isValidMorse = word.every(char => char in morseJS);
 
     const promiseTwo = new Promise((resolve, reject) => {
@@ -163,8 +162,10 @@ toJs(morse)
 })
 
 function joinWords(morseArray) {
-    const myDiv = document.querySelector('div');
-    myDiv.innerText = `${userInput} in morse code will be ${morseArray}`;
+    for (let element of morseArray) {
+        const myDiv = document.querySelector('div');
+        myDiv.innerText = `${userInput} in morse code will be ${morseArray}`;
+    }
 }
 
 // function isValidMorse(userInput) {
@@ -187,3 +188,12 @@ function joinWords(morseArray) {
 // .catch((error) => {
 //     console.log(error)
 // })
+
+function toMorse(morseJS) {
+    const userInput = prompt('Provide a word or sentence');
+    const userArray = userInput.replaceAll(' ','').toLowerCase().split('');
+
+    const promiseTwo = new Promise((resolve, reject) => {
+        
+    })
+}
