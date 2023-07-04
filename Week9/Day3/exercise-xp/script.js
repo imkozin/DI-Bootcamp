@@ -20,12 +20,16 @@
 //     .then(objectStarWars => console.log(objectStarWars.result));
 
 async function getObject () {
-    const response = await fetch("https://www.swapi.tech/api/starships/9/")
-    if (response.ok) {
-        const data = await response.json();
-        console.log(data.result);
-    } else {
-        throw new Error('there is an issue');
+    try {
+        const response = await fetch("https://www.swapi.tech/api/starships/9/")
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data.result);
+        } else {
+            throw new Error('there is an issue');
+        }
+    } catch (error) {
+        console.log(('In the catch' , error))
     }
 }
 
@@ -48,3 +52,6 @@ async function asyncCall() {
 }
 
 asyncCall();
+
+// The message 'calling' will be logged to the console.
+// After a delay of 2 seconds, the message 'resolved' will be logged to the console as the value of the result variable.
