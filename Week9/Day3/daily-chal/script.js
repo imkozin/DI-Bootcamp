@@ -31,13 +31,12 @@ function displayGif(dataGif, input) {
         image.src = urlGif;
 
         const btn = document.createElement('button');
+        btn.textContent = 'Delete';
         btn.setAttribute('id', 'btn')
         btn.addEventListener('click', function () {
             image.remove();
             btn.remove();
         });
-
-        btn.textContent = 'Delete';
 
         myDiv.appendChild(image);
         myDiv.appendChild(btn);
@@ -59,7 +58,10 @@ const delAll = document.getElementById('delete');
 delAll.addEventListener('click', deleteAll);
 
 function deleteAll() {
-    return myDiv.innerHTML = '';
+    // while(myDiv.firstElementChild){
+    //     myDiv.firstElementChild.remove()
+    // };
+    return myDiv.textContent = '';
 }
 
 
