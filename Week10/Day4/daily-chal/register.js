@@ -20,6 +20,7 @@ function handleSubmit(e) {
     //     username: username.value,
     //     password: password.value
     // };
+    e.preventDefault();
     const [first, last, email, username, password] = inputs.map((input) => input.value);
     const body = { first, last, email, username, password }
     if (inputs.includes(null)) return;
@@ -36,9 +37,7 @@ function handleSubmit(e) {
     .then((res) => res.json())
     .then(res =>messageBox.innerHTML = res['message'])
     .catch(console.error)
-    .finally(() => {
-        inputs.forEach(input => (input.value = ''));
-    })
+    .finally(() => form.reset());
 }
 
 // function handleChange(e) {
