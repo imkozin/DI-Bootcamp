@@ -37,8 +37,14 @@ const nextHoliday = () => {
     return daysleft;
 }
 
+const getCurrentDateTime = () => {
+    const currentDateTime = new Date();
+    return currentDateTime.toLocaleString();
+  };
+
 module.exports = {
     timeLeft,
     minutesLived,
     nextHoliday,
+    getCurrentDateTime
 }

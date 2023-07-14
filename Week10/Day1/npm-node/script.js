@@ -1,10 +1,14 @@
-// const b = 5;
+const b = 5;
 
-// const {largeNumber} = require('./main.js');
+const {largeNumber} = require('./main.js');
+const newNumber = largeNumber + b;
+console.log(newNumber);
 
-// console.log(largeNumber + b);
+module.exports = {
+    newNumber,
+}
 
-const {timeLeft} = require('./date.js');
+const {timeLeft, todayDate} = require('./date.js');
 
 // if async func
 // timeLeft()
