@@ -7,8 +7,9 @@
   pointer-events: none;
 }
 
-h4 {
+.red{
   color: red;
+  background-color: lightblue;
 }
 
 @media (prefers-reduced-motion: no-preference) {
