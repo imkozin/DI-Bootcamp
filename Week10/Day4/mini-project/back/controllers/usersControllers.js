@@ -1,4 +1,4 @@
-import { register } from "../models/users.js";
+import { register, login } from "../models/users.js";
 import bcrypt from 'bcrypt';
 
 export const _register = async (req, res) => {
@@ -21,6 +21,22 @@ export const _register = async (req, res) => {
         res.json(rows);
     } catch (err) {
         console.log(err);
-            res.status(404).json({msg: err.message})
+        res.status(404).json({msg: err.message})
     }
 };
+
+export const _login = async (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    try {
+        const answer = await login({
+            username,
+            password
+        });
+        res.json(answer)
+    } catch (err) {
+        console.log(err);
+        res.status(404).json({msg: err.message})
+    }
+}

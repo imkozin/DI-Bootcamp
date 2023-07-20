@@ -1,4 +1,37 @@
 import db from '../config/database.js';
+import bcrypt from 'bcrypt';
+
+export const login = async({
+    username,
+    password
+}) => {
+    const trx = await db.transaction();
+
+    try {
+        const user = await trx('login')
+        .where({
+            username
+        })
+        .first()
+
+        if (!user) {
+            throw new Error('Invalid username');
+        }
+
+        const passwordMatch = await bcrypt.compare(password, user.password);
+
+        if (!passwordMatch) {
+            throw new Error('Invalid password');
+          }
+
+        await trx.commit();
+
+        return user
+    } catch (err) {
+        await trx.rollback()
+        throw new Error(err.message)
+    }
+}
 
 export const register = async({
     first_name,
@@ -24,7 +57,7 @@ export const register = async({
 
         const login = await db('login')
         .insert({
-            username: user[0].username, // username: username --> the same
+            username, // username: username --> the same
             password: hash,
         }, ['login_id', 'username', 'password'])
         .transacting(trx);
