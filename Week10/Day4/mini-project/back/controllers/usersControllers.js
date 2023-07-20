@@ -1,4 +1,4 @@
-import { register, login } from "../models/users.js";
+import { register, login, updateLastLogin } from "../models/users.js";
 import bcrypt from 'bcrypt';
 
 export const _register = async (req, res) => {
@@ -25,18 +25,39 @@ export const _register = async (req, res) => {
     }
 };
 
-export const _login = async (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
+// export const _login = async (req, res) => {
+//     const username = req.body.username;
+//     const password = req.body.password;
 
+//     try {
+//         const answer = await login({
+//             username,
+//             password
+//         });
+//         res.json(answer)
+//     } catch (err) {
+//         console.log(err);
+//         res.status(404).json({msg: err.message})
+//     }
+// }
+
+export const _login = async (req, res) => {
     try {
-        const answer = await login({
-            username,
-            password
-        });
-        res.json(answer)
+        const pass = await login(req.body.password);
+
+        if (pass.length === 0)
+            return res.status(404).json({msg:"not found"});
+        
+        const match = bcrypt.compareSync(req.body.
+        password, pass[0].password);
+        
+        if (!match) 
+            return res.status(401).json({msg:"wrong password"});
+
+        await updateLastLogin();
+
+        res.json({msg: "Success"});
     } catch (err) {
         console.log(err);
-        res.status(404).json({msg: err.message})
     }
 }
