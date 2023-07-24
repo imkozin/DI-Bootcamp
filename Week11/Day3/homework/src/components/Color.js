@@ -27,9 +27,9 @@ class Color extends React.Component {
         console.log("in getSnapshotBeforeUpdate", this.state.color)
     } 
 
-    componentDidUpdate = () => {
-        console.log("Previous state:", prevState.favoriteColor);
-        console.log("Current state:", this.state.favoriteColor);
+    componentDidUpdate = (prevProps, prevState) => {
+        console.log("Previous state:", prevState.color);
+        console.log("Current state:", this.state.color);
         console.log("after update", this.state.color)
     }
 
@@ -41,15 +41,21 @@ class Color extends React.Component {
         this.setState({show : false})
     }
 
-    render () {
+    render() {
         return (
             <>
-                <h1>My favorite color is {this.state.color}</h1>
-                <button onClick={this.changeColor}>Change Color</button>
-                {this.state.show ? <Child /> : null}
-                <button onClick={this.deleteHeader}>Delete Header</button>
+                {this.state.show ? 
+                    <div>
+                       <Child />
+                       <button onClick={this.deleteHeader}>Delete Header</button>
+                    </div> :
+                    <div>
+                        <h1>My favorite color is {this.state.color}</h1>
+                        <button onClick={this.changeColor}>Change Color</button>
+                    </div>
+                }
             </>
-        )
+        );
     }
 }
 
