@@ -2,7 +2,7 @@ import React from 'react';
 
 class Child extends React.Component {
     componentWillUnmount = () => {
-        alert('The component named header is about to be nmounted')
+        alert('The component named header is about to be unmounted')
     }
 
     render () {

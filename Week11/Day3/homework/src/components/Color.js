@@ -12,8 +12,10 @@ class Color extends React.Component {
     }
 
     componentDidMount = () => {
-        alert('componentDidMount reached');
-        this.setState({color : 'yellow'})
+        setTimeout(() => {
+            alert('componentDidMount reached');
+            this.setState({color : 'yellow'})
+        }, 3000)
     }
 
     // default true / by false color isn't updated
@@ -26,6 +28,8 @@ class Color extends React.Component {
     } 
 
     componentDidUpdate = () => {
+        console.log("Previous state:", prevState.favoriteColor);
+        console.log("Current state:", this.state.favoriteColor);
         console.log("after update", this.state.color)
     }
 
