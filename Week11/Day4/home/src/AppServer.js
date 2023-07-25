@@ -32,7 +32,9 @@ class App extends React.Component {
                 body: JSON.stringify({ message: this.state.message })
             })
             const data = await res.json();
-            this.setState({res: data});
+            console.log("res=>", res);
+            console.log("data=>", data);
+            this.setState({message: data});
         } catch (err) {
             console.log(err);
         }
@@ -44,7 +46,7 @@ class App extends React.Component {
 
     render () {
         const {header} = this.state;
-        const {res} = this.state;
+        const {data} = this.state;
         return (
             <div className="App">
               <header className="App-header">
@@ -54,7 +56,7 @@ class App extends React.Component {
                     <input onChange={(e)=>this.handleChange(e)} type="text" name="message"/>
                     <input type="submit" value="Submit" />
                 </form>
-                <p>{res}</p>
+                <p>{data}</p>
               </header>
             </div>
           );
