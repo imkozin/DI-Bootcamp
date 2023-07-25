@@ -2,6 +2,7 @@ import './App.css';
 // import Color from './components/Color';
 import BuggyCounter from './components/BuggyCounter';
 import ErrorBoundary from './components/ErrorBoundary';
+import FormComponent from './components/FormComponent';
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
         <ErrorBoundary>
           <BuggyCounter />
         </ErrorBoundary>
+        
+        <FormComponent/>
       </header>
     </div>
   );
